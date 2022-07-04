@@ -1,7 +1,11 @@
 import React from 'react';
+import { getWeather } from '../../redux/Weather';
 
-const WeatherInfo = () => (
-  <div>Weather Info</div>
-);
+const WeatherInfo = () => {
+  getWeather('Badakhshan');
+  return (
+    <div>Weather Info</div>
+  );
+};
 
 export default WeatherInfo;
