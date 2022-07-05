@@ -2,7 +2,7 @@ import React from 'react';
 import State from './State';
 
 const Country = ({
-  name, states, id,
+  name, states,
 }) => (
   <li>
     <h3>
@@ -10,7 +10,7 @@ const Country = ({
     </h3>
     {states.map((state) => (
       <State
-        key={id}
+        key={state.name}
         state={state}
       />
     ))}

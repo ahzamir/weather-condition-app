@@ -1,17 +1,14 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Country from './Country';
+import { getCountries } from '../../../redux/CountriesState/countriesState';
 
 const Countries = () => {
-  const countries = [{
-    name: 'Afghanistan', iso3: 'AFG', iso2: 'AF', states: ['kabul', 'bamyan'],
-  },
-  {
-    name: 'United state', iso3: 'UN', iso2: 'UN', states: ['new york', 'virginia'],
-  },
-  {
-    name: 'Iran', iso3: 'IR', iso2: 'IR', states: ['Tehran', 'Mashhad'],
-  }];
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCountries());
+  }, []);
+  const countries = useSelector((state) => (state.countries));
   return (
     <ul>
       <li>
@@ -19,10 +16,9 @@ const Countries = () => {
       </li>
       {countries.map((country) => (
         <Country
-          key={country.name}
+          key={country.iso3}
           name={country.name}
           states={country.states}
-          id={country.iso3}
         />
       ))}
     </ul>
