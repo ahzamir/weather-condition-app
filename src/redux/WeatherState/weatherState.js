@@ -51,6 +51,13 @@ const getWeather = (state) => async (dispatch) => {
   });
 };
 
+const weatherReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_WEATHER:
+      return [action.payload];
+    default: return state;
+  }
+};
 
 export default weatherReducer;
 export { getWeather };
