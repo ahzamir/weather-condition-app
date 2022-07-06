@@ -8,11 +8,6 @@ const Navbar = () => {
       path: '/',
       text: 'Home',
     },
-    {
-      id: 2,
-      path: '/weatherinfo',
-      text: 'Wheather Info',
-    },
   ];
   return (
     <header>
