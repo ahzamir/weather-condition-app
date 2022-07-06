@@ -1,8 +1,20 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { getWeather } from '../../../redux/WeatherState/weatherState';
 
-const WeatherInfo = () => {
-  const weatherInfo = useSelector((state) => (state.stateWeather[0]));
+const WeatherInfo = ({ name }) => {
+  const location = useLocation();
+  const stateName = location.state.name;
+  const locationName = name || stateName;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getWeather(locationName));
+  }, []);
+  const weatherInfo = useSelector((state) => (state.stateWeather));
+  if (!weatherInfo.weather) {
+    return <p>loading...</p>;
+  }
   return (
     <div>
       <ul>
