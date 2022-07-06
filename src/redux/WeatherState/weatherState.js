@@ -13,6 +13,44 @@ const apiGetWeather = async (state) => {
   return weatherinfo;
 };
 
+const getWeather = (state) => async (dispatch) => {
+  const weatherinfo = await apiGetWeather(state);
+  const stateWeather = {
+    name: weatherinfo.location.name,
+    region: weatherinfo.location.region,
+    lat: weatherinfo.location.lat,
+    lon: weatherinfo.location.lon,
+    localtime: weatherinfo.location.localtime,
+    weather: {
+      condition: {
+        icon: `http:${weatherinfo.current.condition.icon}`,
+        text: weatherinfo.current.condition.text,
+      },
+      cloud: weatherinfo.current.cloud,
+      feelslike_c: weatherinfo.current.feelslike_c,
+      last_updated: weatherinfo.current.last_updated,
+      pressure_in: weatherinfo.current.pressure_in,
+      pressure_mb: weatherinfo.current.pressure_mb,
+      temp_c: `${weatherinfo.current.temp_c} °C`,
+      temp_f: `${weatherinfo.current.temp_f} °F`,
+      uv: weatherinfo.current.uv,
+      wind_degree: weatherinfo.current.wind_degree,
+      air_quality: {
+        co: weatherinfo.current.air_quality.co,
+        no2: weatherinfo.current.air_quality.no2,
+        o3: weatherinfo.current.air_quality.o3,
+        pm2_5: weatherinfo.current.air_quality.pm2_5,
+        pm10: weatherinfo.current.air_quality.pm10,
+        so2: weatherinfo.current.air_quality.so2,
+      },
+    },
+  };
+  dispatch({
+    type: GET_WEATHER,
+    payload: stateWeather,
+  });
+};
+
 
 export default weatherReducer;
 export { getWeather };
