@@ -10,18 +10,19 @@ const Countries = () => {
   }, []);
   const countries = useSelector((state) => (state.countries));
   return (
-    <ul>
-      <li>
+    <div>
+      <div>
         <h2>Countries</h2>
-      </li>
-      {countries.map((country) => (
+      </div>
+      {Object.values(countries).map((country) => (
         <Country
           key={country.iso3}
           name={country.name}
           states={country.states}
+          iso3={country.iso3}
         />
       ))}
-    </ul>
+    </div>
   );
 };
 
