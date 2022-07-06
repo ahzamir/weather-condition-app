@@ -1,9 +1,9 @@
 const key = 'b134e251af58430f964152538220407';
 const GET_WEATHER = 'my-app/states/GET_WEATHER';
-const initialState = [];
+const initialState = {};
 
-const apiGetWeather = async (state) => {
-  const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${key}&q=${state}&aqi=yes`, {
+const apiGetWeather = async (name) => {
+  const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${key}&q=${name}&aqi=yes`, {
     method: 'Get',
     headers: {
       'Content-Type': 'application/json',
@@ -13,8 +13,8 @@ const apiGetWeather = async (state) => {
   return weatherinfo;
 };
 
-const getWeather = (state) => async (dispatch) => {
-  const weatherinfo = await apiGetWeather(state);
+const getWeather = (name) => async (dispatch) => {
+  const weatherinfo = await apiGetWeather(name);
   const stateWeather = {
     name: weatherinfo.location.name,
     region: weatherinfo.location.region,
@@ -54,7 +54,7 @@ const getWeather = (state) => async (dispatch) => {
 const weatherReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_WEATHER:
-      return [action.payload];
+      return action.payload;
     default: return state;
   }
 };
