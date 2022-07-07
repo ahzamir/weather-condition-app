@@ -16,8 +16,8 @@ const WeatherInfo = ({ name }) => {
     return <p>loading...</p>;
   }
   return (
-    <div>
-      <ul>
+    <div className="weatherInfoPage">
+      <ul className="padding">
         <li>
           Name:
           {' '}

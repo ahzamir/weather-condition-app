@@ -10,18 +10,24 @@ const Countries = () => {
   }, []);
   const countries = useSelector((state) => (state.countries));
   return (
-    <div>
-      <div>
-        <h2>Countries</h2>
+    <div className="countriesPage">
+      <div className="homePageCover">
+        <h1>World Weather</h1>
+        <p>Choose the country</p>
       </div>
-      {Object.values(countries).map((country) => (
-        <Country
-          key={country.iso3}
-          name={country.name}
-          states={country.states}
-          iso3={country.iso3}
-        />
-      ))}
+      <div className="padding">
+        <h2 className="countriesHeader">Countries</h2>
+      </div>
+      <div className="padding countries">
+        {Object.values(countries).map((country) => (
+          <Country
+            key={country.iso3}
+            name={country.name}
+            states={country.states}
+            iso3={country.iso3}
+          />
+        ))}
+      </div>
     </div>
   );
 };
