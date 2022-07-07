@@ -109,3 +109,39 @@ nav ul {
   cursor: pointer;
   background-color: rgba(242, 242, 246, 0.259);
 }
+
+.weatherInfo {
+  color: white;
+}
+
+.chooseState {
+  color: #fff;
+}
+
+.states {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #fff;
+  width: 100%;
+}
+
+.state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: rgb(57, 92, 156) solid 1px;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+
+.stateName {
+  font-size: 0.8rem;
+}
+
+.stateCode {
+  font-size: 0.5rem;
+}
+
+.stateIcone {
+  color: #fff;
+}
