@@ -18,9 +18,9 @@ I have built this project using react-redux and JavaScript.
 
 ## Live Demo (Netlify) 💻
 
-- [World Weather](https://development--gregarious-pavlova-aaa751.netlify.app/)
+- [World Weather](https://gregarious-pavlova-aaa751.netlify.app/)
 
-- [Live Demo](https://www.loom.com/share/3b83c1bafd504fa09bbfc763cc2f3afc)
+- [Live Demo](https://www.loom.com/share/df6ca86a26f7404fad7da7713d312ffb)
 
 
 ## Getting Started
