@@ -69,7 +69,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
+- [Original design idea by Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 - Inspiration
 - etc
 
