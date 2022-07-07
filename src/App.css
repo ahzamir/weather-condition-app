@@ -87,11 +87,8 @@ nav ul {
 
 .countries {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.countries div:nth-child(odd) {
-  background-color: rgb(57, 92, 156);
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 0.3rem;
 }
 
 .country {
@@ -100,7 +97,8 @@ nav ul {
   align-items: center;
   color: #fff;
   border: rgb(57, 92, 156) solid 1px;
-  padding: 0.5rem;
+  padding: 0.7rem 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .state {
@@ -113,7 +111,6 @@ nav ul {
 }
 
 .country:hover,
-.countries div:nth-child(odd):hover,
 .state:hover {
   cursor: pointer;
   background-color: rgba(242, 242, 246, 0.259);
@@ -129,7 +126,7 @@ nav ul {
 
 .states {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   color: #fff;
   width: 100%;
 }
