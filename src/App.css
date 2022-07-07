@@ -145,3 +145,61 @@ nav ul {
 .stateIcone {
   color: #fff;
 }
+
+.weatherInfoPage {
+  height: fit-content;
+}
+
+.weatherInfoPage ul {
+  color: #fff;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.stateNameAndImage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.268);
+  padding: 0.5rem;
+  border-radius: 5%;
+}
+
+.stateNameAndImage img {
+  width: 50%;
+  height: auto;
+}
+
+.tempratureC {
+  font-size: 1.7rem;
+}
+
+.weatherParagraph {
+  font-size: 0.40rem;
+}
+
+.weatherInfoLocation {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.weatherInfoLocation {
+  align-items: center;
+}
+
+.locationIcon {
+  width: 2rem;
+  height: auto;
+}
+
+.weatherInfoPadding {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.weatherCondition {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
