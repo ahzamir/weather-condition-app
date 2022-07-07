@@ -16,9 +16,9 @@ I have built this project using react-redux and JavaScript.
 - Webpack
 - Jest
 
-## Live Demo (if available) 💻
+## Live Demo (Netlify) 💻
 
-[World Weather](https://62c6d969ab4b2c134cd3fcba--gregarious-pavlova-aaa751.netlify.app/)
+[World Weather](https://development--gregarious-pavlova-aaa751.netlify.app/)
 
 
 ## Getting Started
