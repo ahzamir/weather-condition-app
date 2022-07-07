@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { IoLocationSharp } from 'react-icons/io5';
 import { getWeather } from '../../../redux/WeatherState/weatherState';
-import { IoLocationSharp } from "react-icons/io5";
 
 const WeatherInfo = ({ name }) => {
   const location = useLocation();
@@ -28,29 +28,29 @@ const WeatherInfo = ({ name }) => {
                   {weatherInfo.weather.condition.text}
                 </h4>
               </div>
-              <h1 className='tempratureC'>
+              <h1 className="tempratureC">
                 {weatherInfo.weather.temp_c}
               </h1>
-              <p className='weatherParagraph'>
+              <p className="weatherParagraph">
                 {weatherInfo.weather.temp_f}
               </p>
             </div>
             <h2>
               {weatherInfo.name}
             </h2>
-            <div className='weatherParagraph'>
+            <div className="weatherParagraph">
               Localtime:
               {' '}
               {weatherInfo.localtime}
             </div>
-            <div className='weatherParagraph'>
+            <div className="weatherParagraph">
               Last Updated:
               {' '}
               {weatherInfo.weather.last_updated}
             </div>
           </div>
         </li>
-        <li className='weatherInfoLocation'>
+        <li className="weatherInfoLocation">
           <div>
             <h4>
               Region:
@@ -74,7 +74,7 @@ const WeatherInfo = ({ name }) => {
             <IoLocationSharp className="locationIcon" />
           </div>
         </li>
-        <h4 className='weatherInfoPadding condition'>
+        <h4 className="weatherInfoPadding condition">
           Condition:
         </h4>
         <li className="weatherCondition weatherInfoPadding">

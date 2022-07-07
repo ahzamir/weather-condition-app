@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CgArrowRightO } from "react-icons/cg";
+import { CgArrowRightO } from 'react-icons/cg';
 
 const State = ({ name, code }) => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const State = ({ name, code }) => {
       className="state"
     >
       <div>
-        <h2 className='stateName'>
+        <h2 className="stateName">
           {name}
         </h2>
         <p className="stateCode">
@@ -19,7 +19,7 @@ const State = ({ name, code }) => {
         </p>
       </div>
       <div>
-        <CgArrowRightO className='stateIcon' />
+        <CgArrowRightO className="stateIcon" />
       </div>
     </div>
   );
