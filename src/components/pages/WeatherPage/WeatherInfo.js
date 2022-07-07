@@ -74,7 +74,7 @@ const WeatherInfo = ({ name }) => {
             <IoLocationSharp className="locationIcon" />
           </div>
         </li>
-        <h4 className='weatherInfoPadding'>
+        <h4 className='weatherInfoPadding condition'>
           Condition:
         </h4>
         <li className="weatherCondition weatherInfoPadding">

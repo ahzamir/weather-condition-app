@@ -20,7 +20,9 @@ const States = () => {
           States
         </h2>
         <p>
-          Choose a state
+          Choose a state:
+          {' '}
+          {countryState.states.length} States
         </p>
       </div>
       <div className="states padding">

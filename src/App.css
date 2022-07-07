@@ -187,11 +187,16 @@ nav ul {
 
 .weatherInfoLocation {
   align-items: center;
+  padding-top: 2.5rem;
 }
 
 .locationIcon {
   width: 2rem;
   height: auto;
+}
+
+.condition {
+ padding-top: 1rem;
 }
 
 .weatherInfoPadding {
@@ -202,4 +207,5 @@ nav ul {
 .weatherCondition {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 2rem;
 }
