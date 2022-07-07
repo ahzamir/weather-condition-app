@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.padding {
+  padding: 1.5rem;
+}
+
+.margin {
+  margin-top: 4rem;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(59, 95, 161);
+  border-bottom: solid 1px black;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 30px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  width: 5rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 3rem;
+}
+
+.microphone,
+.settings,
+.backIcon {
+  color: white;
+}
+
+.navlink {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.countriesPage,
+.statesPage,
+.weatherInfoPage {
+  background-color: rgb(67, 105, 178);
+  width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+:root {
+  --thirthary: rgba(50, 4, 29, 0.8);
+  --forthary: rgba(67, 106, 178, 0.555);
+}
+
+.homePageCover {
+  background: linear-gradient(90deg, var(--thirthary), var(--forthary)), url(aassets/cover.jpg) no-repeat center center / cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 17rem;
+  color: #fff;
+}
+
+.countriesHeader {
+  color: #fff;
+  text-align: center;
+}
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 0.3rem;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  border: rgb(57, 92, 156) solid 1px;
+  padding: 0.7rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.countryContents {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.countryInfo {
+  font-size: 0.5rem;
+  text-align: center;
+}
+
+.state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: rgb(57, 92, 156) solid 1px;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+
+.country:hover,
+.state:hover {
+  cursor: pointer;
+  background-color: rgba(242, 242, 246, 0.259);
+}
+
+.weatherInfo {
+  color: white;
+}
+
+.chooseState {
+  color: #fff;
+}
+
+.states {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  color: #fff;
+  width: 100%;
+}
+
+.stateName {
+  font-size: 0.8rem;
+}
+
+.stateCode {
+  font-size: 0.5rem;
+}
+
+.stateIcone {
+  color: #fff;
+}
+
+.weatherInfoPage ul {
+  color: #fff;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.stateNameAndImage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.268);
+  padding: 0.5rem;
+  border-radius: 5%;
+}
+
+.stateNameAndImage img {
+  width: 50%;
+  height: auto;
+}
+
+.tempratureC {
+  font-size: 1.7rem;
+}
+
+.weatherParagraph {
+  font-size: 0.4rem;
+}
+
+.weatherInfoLocation {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: center;
+  padding-top: 2.5rem;
+}
+
+.locationIcon {
+  width: 2rem;
+  height: auto;
+}
+
+.condition {
+  padding-top: 1rem;
+}
+
+.weatherInfoPadding {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.weatherCondition {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 2rem;
+}
