@@ -1,15 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# World Weather
 
-> Description the project.
+> This is a SPA react-app project that is built using two APIs. And users can select and choose countries and states and get their updated weather info. 
+I have built this project using react-redux and JavaScript.
 
 
 ## Built With 
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML5
+- CSS3
+- JavaScript
+- React
+- react-redux
+- Webpack
+- Jest
 
 ## Live Demo (if available) 💻
 
@@ -17,10 +22,6 @@
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
@@ -46,6 +47,7 @@ For running tests inside the project directory run npm test in command line or T
 
 ### Deployment
 
+I have used Netlify for deploying this project.
 
 ## Authors
 
