@@ -84,3 +84,28 @@ nav ul {
   color: #fff;
   text-align: center;
 }
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.countries div:nth-child(odd) {
+  background-color: rgb(57, 92, 156);
+}
+
+.country {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  border: rgb(57, 92, 156) solid 1px;
+  padding: 0.5rem;
+}
+
+.country:hover,
+.countries div:nth-child(odd):hover,
+.state:hover {
+  cursor: pointer;
+  background-color: rgba(242, 242, 246, 0.259);
+}
