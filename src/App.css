@@ -20,7 +20,7 @@ body {
 header {
   position: fixed;
   width: 100%;
-  background-color: rgb(236, 76, 138);
+  background-color: rgb(59, 95, 161);
   border-bottom: solid 1px black;
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 30px;
 }
@@ -53,4 +53,34 @@ nav ul {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+}
+
+.countriesPage,
+.statesPage,
+.weatherInfoPage {
+  background-color: rgb(67, 105, 178);
+  width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+:root {
+  --thirthary: rgba(50, 4, 29, 0.8);
+  --forthary: rgba(67, 106, 178, 0.555);
+}
+
+.homePageCover {
+  background: linear-gradient(90deg, var(--thirthary), var(--forthary)), url(aassets/cover.jpg) no-repeat center center / cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 17rem;
+  color: #fff;
+}
+
+.countriesHeader {
+  color: #fff;
+  text-align: center;
 }

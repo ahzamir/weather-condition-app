@@ -10,7 +10,7 @@ const States = () => {
   const countryState = useSelector((state) => (state.countries[countryName]));
   return (
     <div className="statesPage">
-      <div className="weatherInfo padding">
+      <div className="weatherInfo">
         <WeatherInfo
           name={countryName}
         />

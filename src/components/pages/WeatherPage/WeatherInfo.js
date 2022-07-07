@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getWeather } from '../../../redux/WeatherState/weatherState';
+import { IoLocationSharp } from "react-icons/io5";
 
 const WeatherInfo = ({ name }) => {
   const location = useLocation();
@@ -18,57 +19,65 @@ const WeatherInfo = ({ name }) => {
   return (
     <div className="weatherInfoPage">
       <ul className="padding">
-        <li>
-          Name:
-          {' '}
-          {weatherInfo.name}
-        </li>
-        <li>
-          Region:
-          {' '}
-          {weatherInfo.region}
-        </li>
-        <li>
+        <li className="stateNameAndImage">
+          <img src={weatherInfo.weather.condition.icon} alt="weater condition" />
           <div>
-            Localtime:
-            {' '}
-            {weatherInfo.localtime}
-          </div>
-          <div>
-            Last Updated:
-            {' '}
-            {weatherInfo.weather.last_updated}
-          </div>
-        </li>
-        <li>
-          <div>
-            <p>
-              Lat:
+            <div>
+              <div>
+                <h4>
+                  {weatherInfo.weather.condition.text}
+                </h4>
+              </div>
+              <h1 className='tempratureC'>
+                {weatherInfo.weather.temp_c}
+              </h1>
+              <p className='weatherParagraph'>
+                {weatherInfo.weather.temp_f}
+              </p>
+            </div>
+            <h2>
+              {weatherInfo.name}
+            </h2>
+            <div className='weatherParagraph'>
+              Localtime:
               {' '}
-              {weatherInfo.lat}
-            </p>
-            <p>
-              Lon:
+              {weatherInfo.localtime}
+            </div>
+            <div className='weatherParagraph'>
+              Last Updated:
               {' '}
-              {weatherInfo.lon}
-            </p>
+              {weatherInfo.weather.last_updated}
+            </div>
           </div>
         </li>
-        <li>
-          <div>
-            <h3>
-              {weatherInfo.weather.temp_c}
-            </h3>
-            <p>
-              {weatherInfo.weather.temp_f}
-            </p>
-          </div>
+        <li className='weatherInfoLocation'>
           <div>
             <h4>
-              {weatherInfo.weather.condition.text}
+              Region:
+              {' '}
+              {weatherInfo.region}
             </h4>
-            <img src={weatherInfo.weather.condition.icon} alt="weater condition" />
+            <div>
+              <p>
+                Lat:
+                {' '}
+                {weatherInfo.lat}
+              </p>
+              <p>
+                Lon:
+                {' '}
+                {weatherInfo.lon}
+              </p>
+            </div>
           </div>
+          <div className="weatherInfoLocation">
+            <IoLocationSharp className="locationIcon" />
+          </div>
+        </li>
+        <h4 className='weatherInfoPadding'>
+          Condition:
+        </h4>
+        <li className="weatherCondition weatherInfoPadding">
           <div>
             Cloud:
             {' '}
@@ -94,8 +103,12 @@ const WeatherInfo = ({ name }) => {
             {' '}
             {weatherInfo.weather.uv}
           </div>
-          <div>
+        </li>
+        <li className="weatherInfoPadding">
+          <h4>
             Air quality
+          </h4>
+          <div>
             <p>
               Co:
               {' '}
