@@ -10,7 +10,7 @@ const Countries = () => {
   }, []);
   const countries = useSelector((state) => (state.countries));
   return (
-    <div className="countriesPage">
+    <div className="countriesPage" data-testid="countriesContent">
       <div className="homePageCover">
         <h1>World Weather</h1>
         <p>Choose the country</p>
