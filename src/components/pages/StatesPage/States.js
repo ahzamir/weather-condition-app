@@ -9,7 +9,7 @@ const States = () => {
   const countryName = location.state.name;
   const countryState = useSelector((state) => (state.countries[countryName]));
   return (
-    <div className="statesPage">
+    <div className="statesPage" data-testid="statesContent">
       <div className="weatherInfo">
         <WeatherInfo
           name={countryName}

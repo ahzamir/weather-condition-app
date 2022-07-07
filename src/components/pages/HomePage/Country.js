@@ -10,8 +10,11 @@ const Country = ({
       className="country"
       onClick={() => navigate('/states', { state: { name } })}
       onKeyDown={() => navigate('/states', { state: { name } })}
+      tabIndex="0"
+      role="button"
+      aria-pressed="false"
     >
-      <h3>
+      <h3 data-testid="countryContents">
         {name}
       </h3>
       <div>
@@ -22,7 +25,6 @@ const Country = ({
         </p>
         <p>
           States:
-
           {states.length}
         </p>
       </div>

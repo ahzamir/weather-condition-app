@@ -5,9 +5,9 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import store from '../../../../redux/configureStore';
 
-import Countries from "../../../pages/HomePage/Countries";
+import Countries from '../../../pages/HomePage/Countries';
 
-describe('Testing Mission component', () => {
+describe('Testing Countries component', () => {
   render(
     <Provider store={store}>
       <Countries />
@@ -25,7 +25,7 @@ describe('Testing Mission component', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <Countries page="just for test">Missions</Countries>
+          <Countries page="just for test">Countries</Countries>
         </Provider>,
       )
       .toJSON();

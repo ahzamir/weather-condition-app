@@ -9,6 +9,9 @@ const State = ({ name, code }) => {
       onClick={() => navigate('/weather', { state: { name } })}
       onKeyDown={() => navigate('/weather', { state: { name } })}
       className="state"
+      tabIndex="0"
+      role="button"
+      aria-pressed="false"
     >
       <div>
         <h2 className="stateName">
