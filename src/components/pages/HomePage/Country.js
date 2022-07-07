@@ -14,16 +14,16 @@ const Country = ({
       role="button"
       aria-pressed="false"
     >
-      <h3 data-testid="countryContents">
+      <h3 className="countryContents">
         {name}
       </h3>
       <div>
-        <p>
+        <p className="countryInfo">
           Iso:
           {' '}
           {iso3}
         </p>
-        <p>
+        <p className="countryInfo">
           States:
           {states.length}
         </p>
