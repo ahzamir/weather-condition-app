@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Countries component renders correctly 1`] = `
+<div
+  className="countriesPage"
+  data-testid="countriesContent"
+>
+  <div
+    className="homePageCover"
+  >
+    <h1>
+      World Weather
+    </h1>
+    <p>
+      Choose the country
+    </p>
+  </div>
+  <div
+    className="padding"
+  >
+    <h2
+      className="countriesHeader"
+    >
+      Countries
+    </h2>
+  </div>
+  <div
+    className="padding countries"
+  />
+</div>
+`;
