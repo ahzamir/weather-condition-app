@@ -29,10 +29,10 @@ const WeatherInfo = ({ name }) => {
                 </h4>
               </div>
               <h1 className="tempratureC">
-                {weatherInfo.weather.temp_c}
+                {weatherInfo.weather.tempretureCilcius}
               </h1>
               <p className="weatherParagraph">
-                {weatherInfo.weather.temp_f}
+                {weatherInfo.weather.tempretureFaranhide}
               </p>
             </div>
             <h2>
@@ -46,7 +46,7 @@ const WeatherInfo = ({ name }) => {
             <div className="weatherParagraph">
               Last Updated:
               {' '}
-              {weatherInfo.weather.last_updated}
+              {weatherInfo.weather.lastUpdated}
             </div>
           </div>
         </li>
@@ -86,17 +86,17 @@ const WeatherInfo = ({ name }) => {
           <div>
             Feelslike_c:
             {' '}
-            {weatherInfo.weather.feelslike_c}
+            {weatherInfo.weather.feelslike}
           </div>
           <div>
             Pressure in:
             {' '}
-            {weatherInfo.weather.pressure_in}
+            {weatherInfo.weather.pressureIn}
           </div>
           <div>
             Pressure mb:
             {' '}
-            {weatherInfo.weather.pressure_mb}
+            {weatherInfo.weather.pressureMb}
           </div>
           <div>
             UV:
@@ -112,32 +112,32 @@ const WeatherInfo = ({ name }) => {
             <p>
               Co:
               {' '}
-              {weatherInfo.weather.air_quality.co}
+              {weatherInfo.weather.airQuality.co}
             </p>
             <p>
               NO2:
               {' '}
-              {weatherInfo.weather.air_quality.no2}
+              {weatherInfo.weather.airQuality.no2}
             </p>
             <p>
               O3:
               {' '}
-              {weatherInfo.weather.air_quality.o3}
+              {weatherInfo.weather.airQuality.o3}
             </p>
             <p>
               pm2_5:
               {' '}
-              {weatherInfo.weather.air_quality.pm2_5}
+              {weatherInfo.weather.airQuality.pm2}
             </p>
             <p>
               pm10:
               {' '}
-              {weatherInfo.weather.air_quality.pm10}
+              {weatherInfo.weather.airQuality.pm10}
             </p>
             <p>
               So2:
               {' '}
-              {weatherInfo.weather.air_quality.so2}
+              {weatherInfo.weather.airQuality.so2}
             </p>
           </div>
         </li>
