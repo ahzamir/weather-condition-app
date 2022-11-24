@@ -1,31 +1,40 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Country = ({
-  name, states, iso3,
+  name, borders, cca3, flag, population, capital, region,
 }) => {
-  const navigate = useNavigate();
   return (
     <div
       className="country"
-      onClick={() => navigate('/states', { state: { name } })}
-      onKeyDown={() => navigate('/states', { state: { name } })}
-      tabIndex="0"
-      role="button"
-      aria-pressed="false"
     >
       <h3 className="countryContents">
         {name}
       </h3>
       <div>
-        <p className="countryInfo">
-          Iso:
+        <img
+          className="countryContents"
+          src={flag}
+          alt={name}
+        />
+        <p>
+          cca3:
           {' '}
-          {iso3}
+          {cca3}
         </p>
         <p className="countryInfo">
-          States:
-          {states.length}
+          Population:
+          {' '}
+          {population}
+        </p>
+        <p className="countryInfo">
+          Region:
+          {' '}
+          {region}
+        </p>
+        <p className="countryInfo">
+          Capital:
+          {' '}
+          {capital}
         </p>
       </div>
     </div>

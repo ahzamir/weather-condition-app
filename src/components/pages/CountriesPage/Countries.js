@@ -1,9 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getCountries } from '../../../redux/CountriesState/countriesState';
 import Country from './Country';
 
 const Countries = () => {
   const dispatch = useDispatch();
+  const { continentName } = useParams();
+  useEffect(() => {
+    console.log(continentName);
+    dispatch(getCountries(continentName));
+  }, []);
   const countries = useSelector((state) => (state.countries));
   return (
     <div className="countriesPage" data-testid="countriesContent">
@@ -17,10 +24,13 @@ const Countries = () => {
       <div className="padding countries">
         {Object.values(countries).map((country) => (
           <Country
-            key={country.iso3}
-            name={country.name}
-            states={country.states}
-            iso3={country.iso3}
+            key={country.cca3}
+            name={country.name.common}
+            cca3={country.cca3}
+            flag={country.flags.png}
+            population={country.population}
+            capital={country.capital}
+            region={country.region}
           />
         ))}
       </div>

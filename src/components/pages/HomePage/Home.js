@@ -8,13 +8,8 @@ import oceaniaSvg from '../../../aassets/images/oceania.svg';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getCountries } from '../../../redux/CountriesState/countriesState';
 
 const Home = () => {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getCountries());
-    }, []);
     const continents = [
         {
             name: 'Africa',
