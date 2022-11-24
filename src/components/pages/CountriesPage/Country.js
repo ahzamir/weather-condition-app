@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Country = ({
-  name, borders, cca3, flag, population, capital, region,
+  name, cca3, flag, population, capital, region,
 }) => {
   return (
     <div
