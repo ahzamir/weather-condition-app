@@ -1,43 +1,55 @@
-// import homePageCover from '../../../assets/images/world.svg';
-import React from 'react';
-// import { Link } from 'react-router-dom';
+import homePageCover from '../../../aassets/images/world.svg';
+import africaSvg from '../../../aassets/images/africa.svg';
+import asiaSvg from '../../../aassets/images/asia.svg';
+import europeSvg from '../../../aassets/images/europe.svg';
+import northAmericaSvg from '../../../aassets/images/north-america.svg';
+import southAmericaSvg from '../../../aassets/images/south-america.svg';
+import oceaniaSvg from '../../../aassets/images/oceania.svg';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getCountries } from '../../../redux/CountriesState/countriesState';
 
 const Home = () => {
-    // const continents = [
-    //     {
-    //         name: 'Africa',
-    //         image: '../../../assets/images/africa.svg',
-    //         id: 1,
-    //     },
-    //     {
-    //         name: 'Asia',
-    //         image: '../../../assets/images/asia.svg',
-    //         id: 2,
-    //     },
-    //     {
-    //         name: 'Europe',
-    //         image: '../../../assets/images/europe.svg',
-    //         id: 3,
-    //     },
-    //     {
-    //         name: 'North America',
-    //         image: '../../../assets/images/north-america.svg',
-    //         id: 4,
-    //     },
-    //     {
-    //         name: 'South America',
-    //         image: '../../../assets/images/south-america.svg',
-    //         id: 5,
-    //     },
-    //     {
-    //         name: 'Australia',
-    //         image: '../../../assets/images/australia.svg',
-    //         id: 6,
-    //     },
-    // ];
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getCountries());
+    }, []);
+    const continents = [
+        {
+            name: 'Africa',
+            image: africaSvg,
+            id: 1,
+        },
+        {
+            name: 'Asia',
+            image: asiaSvg,
+            id: 2,
+        },
+        {
+            name: 'Europe',
+            image: europeSvg,
+            id: 3,
+        },
+        {
+            name: 'North America',
+            image: northAmericaSvg,
+            id: 4,
+        },
+        {
+            name: 'South America',
+            image: southAmericaSvg,
+            id: 5,
+        },
+        {
+            name: 'Australia',
+            image: oceaniaSvg,
+            id: 6,
+        },
+    ];
     return (
         <div className="home">
-            {/* <div className="home">
+            <div className="home">
                 <img src={homePageCover} alt="homePageCover" />
             </div>
             <div>
@@ -52,7 +64,7 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
-            </div> */}
+            </div>
             home
         </div>
     );

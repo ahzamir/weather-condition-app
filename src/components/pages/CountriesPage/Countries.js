@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Country from './Country';
-import { getCountries } from '../../../redux/CountriesState/countriesState';
 
 const Countries = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCountries());
-  }, []);
   const countries = useSelector((state) => (state.countries));
   return (
     <div className="countriesPage" data-testid="countriesContent">
