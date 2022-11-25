@@ -5,8 +5,7 @@ import europeSvg from '../../../aassets/images/europe.svg';
 import northAmericaSvg from '../../../aassets/images/north-america.svg';
 import southAmericaSvg from '../../../aassets/images/south-america.svg';
 import oceaniaSvg from '../../../aassets/images/oceania.svg';
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {

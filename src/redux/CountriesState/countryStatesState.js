@@ -3,7 +3,7 @@ const GET_COUNTRY_STATES = 'my-app/countries/GET_COUNTRY_STATES';
 
 const apiGetCountriesStates = async (countryName) => {
     const response = await fetch(`${apiUrl}`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
@@ -12,13 +12,13 @@ const apiGetCountriesStates = async (countryName) => {
         }),
     });
     const countriesStates = await response.json();
-    console.log(countriesStates);
     return countriesStates;
 };
 
 const getCountriesStates = (countryName) => async (dispatch) => {
     const countryData = await apiGetCountriesStates(countryName);
-    countryStates = countryData.data.states;
+    const countryStates = countryData.data.states;
+    console.log(countryStates);
     dispatch({
         type: GET_COUNTRY_STATES,
         payload: countryStates,

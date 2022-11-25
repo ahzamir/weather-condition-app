@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Country = ({
   name, cca3, flag, population, capital, region,
@@ -7,8 +8,8 @@ const Country = ({
     <div
       className="country"
     >
-      <a
-        href={`/continent/${region}/${name}`}
+      <Link
+        to={`/${name}/states`}
       >
         <h3 className="countryContents">
           {name}
@@ -40,7 +41,7 @@ const Country = ({
             {capital}
           </p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

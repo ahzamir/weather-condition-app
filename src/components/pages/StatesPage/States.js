@@ -1,21 +1,26 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import State from './State';
-import WeatherInfo from '../WeatherPage/WeatherInfo';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+// import State from './State';
+import { getCountriesStates } from '../../../redux/CountriesState/countryStatesState';
+// import WeatherInfo from '../WeatherPage/WeatherInfo';
 
 const States = () => {
-  const location = useLocation();
-  const countryName = location.state.name;
-  const countryState = useSelector((state) => (state.countries[countryName]));
+  const countryName = useParams().name;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCountriesStates(countryName));
+  }, []);
+  // const countryState = useSelector((state) => (state.countries[countryName]));
   return (
     <div className="statesPage" data-testid="statesContent">
-      <div className="weatherInfo">
+      states
+      {/* <div className="weatherInfo">
         <WeatherInfo
           name={countryName}
         />
-      </div>
-      <div className="padding chooseState">
+      </div> */}
+      {/* <div className="padding chooseState">
         <h2>
           States
         </h2>
@@ -35,7 +40,7 @@ const States = () => {
             code={state.state_code}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

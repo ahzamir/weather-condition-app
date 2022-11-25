@@ -18,7 +18,6 @@ const getCountries = (continentName) => async (dispatch) => {
   countries.forEach((country) => {
     countriesData[country.name.common] = country;
   });
-  console.log(countriesData);
   dispatch({
     type: GET_COUNTRY,
     payload: countriesData,
