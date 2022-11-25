@@ -18,14 +18,13 @@ const apiGetCountriesStates = async (countryName) => {
 const getCountriesStates = (countryName) => async (dispatch) => {
     const countryData = await apiGetCountriesStates(countryName);
     const countryStates = countryData.data.states;
-    console.log(countryStates);
     dispatch({
         type: GET_COUNTRY_STATES,
         payload: countryStates,
     });
 };
 
-const countriesStatesReducers = (state = {}, action) => {
+const countriesStatesReducers = (state = [], action) => {
     switch (action.type) {
         case GET_COUNTRY_STATES:
             return action.payload;

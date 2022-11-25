@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-// import State from './State';
+import State from './State';
 import { getCountriesStates } from '../../../redux/CountriesState/countryStatesState';
 // import WeatherInfo from '../WeatherPage/WeatherInfo';
 
@@ -11,36 +11,36 @@ const States = () => {
   useEffect(() => {
     dispatch(getCountriesStates(countryName));
   }, []);
-  // const countryState = useSelector((state) => (state.countries[countryName]));
+  const countryStates = useSelector((state) => (state.countryStates));
+  console.log(countryStates);
   return (
     <div className="statesPage" data-testid="statesContent">
-      states
       {/* <div className="weatherInfo">
         <WeatherInfo
           name={countryName}
         />
       </div> */}
-      {/* <div className="padding chooseState">
+      <div className="padding chooseState">
         <h2>
           States
         </h2>
         <p>
           Choose a state:
           {' '}
-          {countryState.states.length}
+          {countryStates.length}
           {' '}
           States
         </p>
       </div>
       <div className="states padding">
-        {countryState.states.map((state) => (
+        {countryStates.map((state) => (
           <State
             name={state.name}
             key={state.name}
             code={state.state_code}
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
