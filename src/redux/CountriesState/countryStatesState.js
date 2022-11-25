@@ -34,3 +34,4 @@ const countriesStatesReducers = (state = {}, action) => {
 };
 
 export default countriesStatesReducers;
+export { getCountriesStates };
