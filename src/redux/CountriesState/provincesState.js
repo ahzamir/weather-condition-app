@@ -1,4 +1,5 @@
 const apiUrl = 'https://countriesnow.space/api/v0.1/countries/states';
+const GET_COUNTRY_STATES = 'my-app/countries/GET_COUNTRY_STATES';
 
 const apiGetCountriesStates = async (countryName) => {
     const response = await fetch(`${apiUrl}`, {
@@ -14,3 +15,22 @@ const apiGetCountriesStates = async (countryName) => {
     console.log(countriesStates);
     return countriesStates;
 };
+
+const getCountriesStates = (countryName) => async (dispatch) => {
+    const countryData = await apiGetCountriesStates(countryName);
+    countryStates = countryData.data.states;
+    dispatch({
+        type: GET_COUNTRY_STATES,
+        payload: countryStates,
+    });
+};
+
+const countriesStatesReducers = (state = {}, action) => {
+    switch (action.type) {
+        case GET_COUNTRY_STATES:
+            return action.payload;
+        default: return state;
+    }
+};
+
+export default countriesStatesReducers;
