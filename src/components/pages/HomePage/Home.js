@@ -47,17 +47,17 @@ const Home = () => {
             <div className="homePageCover w-100 p-3">
                 <a
                     href="#continents"
-                    className="homePageCoverImage d-flex justify-content-center align-items-center w-75 w-md-100 mx-auto">
+                    className="homePageCoverImage d-flex justify-content-center align-items-center w-75 w-md-100 mx-auto h-75">
                     <img src={homePageCover} alt="homePageCover" className="w-75 w-md-50 p-3" />
                 </a>
                 <h1 className="text-white fw-bold fs-3 text-center p-3">
                     World Weather
                 </h1>
                 <a href="#continents">
-                    <svg class="arrow bounce">
-                        <path class="a1" d="M0 0 L30 22 L60 0"></path>
-                        <path class="a2" d="M0 20 L30 42 L60 20"></path>
-                        <path class="a3" d="M0 40 L30 62 L60 40"></path>
+                    <svg className="arrow bounce">
+                        <path className="a1" d="M0 0 L30 22 L60 0"></path>
+                        <path className="a2" d="M0 20 L30 42 L60 20"></path>
+                        <path className="a3" d="M0 40 L30 62 L60 40"></path>
                     </svg>
                 </a>
             </div>
@@ -68,11 +68,11 @@ const Home = () => {
                 <h3 className="text-white fw-bold fs-5 fs-md-2 text-center">
                     Select a continent to explore
                 </h3>
-                <div className="d-flex flex-wrap w-100">
+                <div className="w-100 mx-auto continents">
                     {continents.map((continent) => (
-                        <div key={continent.id}>
-                            <img src={continent.image} alt={continent.name} />
+                        <div key={continent.id} className="d-flex flex-column justify-content-center align-items-center m-3 p-3 continent">
                             <Link to={`/continent/${continent.name}`}>
+                                <img src={continent.image} alt={continent.name} />
                                 {continent.name}
                             </Link>
                         </div>
