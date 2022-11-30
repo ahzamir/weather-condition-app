@@ -60,7 +60,7 @@ const Home = () => {
                     </svg>
                 </a>
             </div>
-            <div className="w-100 p-3 secondary-bg h-100" id="continents">
+            <div className="w-100 pe-3 ps-3 pt-5 pb-5 secondary-bg h-100" id="continents">
                 <h2 className="text-white fw-bold fs-5 fs-md-2 text-center">
                     Welcome to the World of Countries and States <br /> <span>Explore the world weathers</span>
                 </h2>
