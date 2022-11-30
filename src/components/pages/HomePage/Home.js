@@ -43,11 +43,11 @@ const Home = () => {
     ];
     return (
         <div>
-            <div className="homePageCover w-100 p-3">
+            <div className="homePageCover w-100 ps-3 pe-3">
                 <a
                     href="#continents"
-                    className="homePageCoverImage d-flex justify-content-center align-items-center w-75 w-md-100 mx-auto h-75">
-                    <img src={homePageCover} alt="homePageCover" className="w-75 w-md-50 p-3" />
+                    className="homePageCoverImage d-flex justify-content-center align-items-center w-100 w-md-75 mx-auto pt-md-5">
+                    <img src={homePageCover} alt="homePageCover" className="w-75 w-md-50 pt-5" />
                 </a>
                 <h1 className="text-white fw-bold fs-3 text-center p-3">
                     World Weather
@@ -67,7 +67,7 @@ const Home = () => {
                 <h3 className="text-white fw-bold fs-5 fs-md-2 text-center">
                     Select a continent to explore
                 </h3>
-                <div className="w-100 mx-auto continents">
+                <div className="w-100 mx-auto continents p-2 p-md-5">
                     {continents.map((continent) => (
                         <Link
                             to={`/continent/${continent.name}`}

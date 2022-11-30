@@ -5,11 +5,12 @@ import Home from './components/pages/HomePage/Home';
 import States from './components/pages/StatesPage/States';
 import Countries from './components/pages/CountriesPage/Countries';
 import WeatherInfo from './components/pages/WeatherPage/WeatherInfo';
+import Footer from './components/Footer';
 
 const App = () => (
   <div className="App d-flex flex-column">
     <Navbar />
-    <div className="main-contents h-100">
+    <div className="h-100">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/continent/:continentName" element={<Countries />} />
@@ -18,6 +19,7 @@ const App = () => (
         <Route path="weather" element={<WeatherInfo />} />
       </Routes>
     </div>
+    <Footer />
   </div>
 );
 

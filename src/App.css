@@ -83,6 +83,8 @@ header {
   align-items: center;
   color: #fff;
   overflow: hidden;
+  height: 100vh;
+  border-radius: 0 0 3rem 3rem;
 }
 
 .homePageCoverImage {
@@ -148,17 +150,17 @@ header {
 
 .continents {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   padding: 1rem;
 }
 
 .continent {
-  background: rgba( 236, 76, 138, 0.65 );
-  backdrop-filter: blur( 5px );
-  -webkit-backdrop-filter: blur( 5px );
+  background: rgba(236, 76, 138, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .continent:hover {
@@ -301,4 +303,16 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-bottom: 2rem;
+}
+
+.portfolioLink:hover {
+  color: #ec4c8a !important;
+}
+
+@media screen and (min-width: 768px) {
+  .continents {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 0.3rem;
+  }
 }
