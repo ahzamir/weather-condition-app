@@ -7,16 +7,18 @@ import Countries from './components/pages/CountriesPage/Countries';
 import WeatherInfo from './components/pages/WeatherPage/WeatherInfo';
 
 const App = () => (
-  <>
+  <div className="App d-flex flex-column">
     <Navbar />
-    <Routes className="main-contents">
-      <Route path="/" element={<Home />} />
-      <Route path="/continent/:continentName" element={<Countries />} />
-      <Route path="/:name/states" element={<States />} />
-      <Route path="states" element={<States />} />
-      <Route path="weather" element={<WeatherInfo />} />
-    </Routes>
-  </>
+    <div className="main-contents">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/continent/:continentName" element={<Countries />} />
+        <Route path="/:name/states" element={<States />} />
+        <Route path="states" element={<States />} />
+        <Route path="weather" element={<WeatherInfo />} />
+      </Routes>
+    </div>
+  </div>
 );
 
 export default App;

@@ -36,10 +36,8 @@ header {
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 30px;
 }
 
-.icons {
-  display: flex;
-  justify-content: space-between;
-  width: 3rem;
+.main-contents {
+  margin-top: 79px;
 }
 
 .countriesPage,
