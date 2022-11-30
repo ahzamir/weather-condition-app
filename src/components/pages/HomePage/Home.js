@@ -42,7 +42,7 @@ const Home = () => {
         },
     ];
     return (
-        <div className="home">
+        <div>
             <div className="home">
                 <img src={homePageCover} alt="homePageCover" />
             </div>
