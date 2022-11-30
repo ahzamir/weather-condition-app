@@ -9,10 +9,31 @@ body {
   padding: 0;
 }
 
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white;
+  background: var(--secondary-color)
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #fab9d2 0%, var(--primary-color) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--secondary-color);
+}
+
 :root {
   --primary-color: #ec4c8a;
   --secondary-color: #1d1d1d;
 }
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
 
 .color-primary {
   color: var(--primary-color);
