@@ -30,48 +30,16 @@ body {
   background-color: var(--secondary-color);
 }
 
-.padding {
-  padding: 1.5rem;
-}
-
-.margin {
-  margin-top: 4rem;
-}
-
 header {
   position: fixed;
   border-bottom: solid 1px black;
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 30px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navLinks {
-  display: flex;
-  justify-content: space-between;
-  width: 5rem;
-}
-
 .icons {
   display: flex;
   justify-content: space-between;
   width: 3rem;
-}
-
-.microphone,
-.settings,
-.backIcon {
-  color: white;
-}
-
-.navlink {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
 }
 
 .countriesPage,
@@ -83,19 +51,13 @@ nav ul {
   padding-bottom: 2rem;
 }
 
-:root {
-  --thirthary: rgba(50, 4, 29, 0.8);
-  --forthary: rgba(67, 106, 178, 0.555);
-}
-
 .homePageCover {
-  background: linear-gradient(90deg, var(--thirthary), var(--forthary)), url(aassets/cover.jpg) no-repeat center center / cover;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)), url(aassets/cover.jpg) no-repeat center center / cover;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 17rem;
   color: #fff;
 }
 

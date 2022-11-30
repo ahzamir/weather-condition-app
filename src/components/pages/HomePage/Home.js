@@ -42,9 +42,9 @@ const Home = () => {
         },
     ];
     return (
-        <div>
-            <div>
-                <img src={homePageCover} alt="homePageCover" />
+        <div className="secondary-bg">
+            <div className="homePageCover w-100">
+                <img src={homePageCover} alt="homePageCover" className="w-75" />
             </div>
             <div>
                 <h1>Choose a continent</h1>

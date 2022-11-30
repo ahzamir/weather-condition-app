@@ -9,7 +9,7 @@ import WeatherInfo from './components/pages/WeatherPage/WeatherInfo';
 const App = () => (
   <>
     <Navbar />
-    <Routes>
+    <Routes className="main-contents">
       <Route path="/" element={<Home />} />
       <Route path="/continent/:continentName" element={<Countries />} />
       <Route path="/:name/states" element={<States />} />
