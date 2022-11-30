@@ -5,7 +5,7 @@ import { AiOutlineSetting } from 'react-icons/ai';
 import { IoChevronBackOutline } from 'react-icons/io5';
 
 const Navbar = () => (
-  <header className="padding">
+  <header className="padding primary-bg w-100">
     <nav>
       <ul>
         <li className="navLinks">

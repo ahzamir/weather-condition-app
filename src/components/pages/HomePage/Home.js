@@ -43,7 +43,7 @@ const Home = () => {
     ];
     return (
         <div>
-            <div className="home">
+            <div>
                 <img src={homePageCover} alt="homePageCover" />
             </div>
             <div>

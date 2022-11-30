@@ -9,6 +9,27 @@ body {
   padding: 0;
 }
 
+:root {
+  --primary-color: #ec4c8a;
+  --secondary-color: #1d1d1d;
+}
+
+.color-primary {
+  color: var(--primary-color);
+}
+
+.color-secondary {
+  color: var(--secondary-color);
+}
+
+.primary-bg {
+  background-color: var(--primary-color);
+}
+
+.secondary-bg {
+  background-color: var(--secondary-color);
+}
+
 .padding {
   padding: 1.5rem;
 }
@@ -19,8 +40,6 @@ body {
 
 header {
   position: fixed;
-  width: 100%;
-  background-color: rgb(59, 95, 161);
   border-bottom: solid 1px black;
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 30px;
 }
