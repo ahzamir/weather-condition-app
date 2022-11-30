@@ -12,7 +12,7 @@ const Navbar = () => (
           <NavLink exact="true" to="/">
             <IoChevronBackOutline className="text-white fs-5 me-2 fw-bold" />
           </NavLink>
-          <NavLink exact="true" to="/" className="text-white fs-5 fw-bold">
+          <NavLink exact="true" to="/" className="text-white fs-5 fw-bold text-decoration-none">
             Home
           </NavLink>
         </li>
