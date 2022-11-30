@@ -7,6 +7,10 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'SF Mono', monospace;
+  height: 100vh;
+  background-color: var(--secondary-color);
 }
 
 ::-webkit-scrollbar {
@@ -94,6 +98,34 @@ header {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+.arrow {
+	width: 60px;
+	height: 70px;
+	/* position: absolute; don't forget set container to relative */
+	left: 49%;
+	margin-left: 0px;
+	bottom: 5%;
+  z-index:999;
+}
+/* set arrow styles */
+.arrow path {
+	stroke: var(--secondary-color);
+	stroke-width: 2px;
+	fill: transparent;	
+	animation: down 2s infinite;
+}
+/* arrow keyframe animation */
+@keyframes down{
+0% { opacity:0 }
+25% { opacity:1 }
+75% { opacity:0 }
+100% { opacity:0 }
+}
+/* arrow animation delay */
+.arrow path.a1{	animation-delay:-1s; }
+.arrow path.a2{	animation-delay:-.5s; }
+.arrow path.a3{	animation-delay:0s; }
 
 .countriesHeader {
   color: #fff;
