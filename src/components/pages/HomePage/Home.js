@@ -7,7 +7,6 @@ import southAmericaSvg from '../../../aassets/images/south-america.svg';
 import oceaniaSvg from '../../../aassets/images/oceania.svg';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsChevronDoubleDown } from 'react-icons/bs';
 
 const Home = () => {
     const continents = [
@@ -70,12 +69,15 @@ const Home = () => {
                 </h3>
                 <div className="w-100 mx-auto continents">
                     {continents.map((continent) => (
-                        <div key={continent.id} className="d-flex flex-column justify-content-center align-items-center m-3 p-3 continent">
-                            <Link to={`/continent/${continent.name}`}>
-                                <img src={continent.image} alt={continent.name} />
-                                {continent.name}
-                            </Link>
-                        </div>
+                        <Link
+                            to={`/continent/${continent.name}`}
+                            key={continent.id}
+                            className="d-flex flex-column justify-content-center align-items-center m-3 p-3 text-decoration-none text-white fw-bold fs-5 fs-md-2 text-center continent"
+                        >
+
+                            <img src={continent.image} alt={continent.name} />
+                            {continent.name}
+                        </Link>
                     ))}
                 </div>
             </div>

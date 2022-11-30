@@ -155,11 +155,22 @@ header {
 
 .continent {
   background: rgba( 236, 76, 138, 0.65 );
-  box-shadow: 0 8px 32px 0 rgba(130, 136, 219, 0.37);
   backdrop-filter: blur( 5px );
   -webkit-backdrop-filter: blur( 5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.continent:hover {
+  background: #1d1d1d;
+  border-radius: 10px;
+  border: 2px solid #ec4c8a;
+  box-shadow: 0 8px 32px 0 rgba(130, 136, 219, 0.37);
+}
+
+.continent:hover img {
+  filter: invert(1) sepia(0) saturate(0) hue-rotate(0deg) brightness(1) contrast(1);
+  transition: filter 0.8s;
 }
 
 .countriesHeader {
