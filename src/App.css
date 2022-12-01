@@ -65,7 +65,6 @@ header {
   margin-top: 79px;
 }
 
-.countriesPage,
 .statesPage,
 .weatherInfoPage {
   background-color: rgb(67, 105, 178);
@@ -175,15 +174,17 @@ header {
   transition: filter 0.8s;
 }
 
-.countriesHeader {
-  color: #fff;
-  text-align: center;
+.countriesPage {
+  background: url(aassets/earth.png) no-repeat center center / cover;
+  width: 100%;
 }
 
 .countries {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 0.3rem;
+  row-gap: 0.3rem;
+  padding: 1rem;
 }
 
 .country {
@@ -311,6 +312,12 @@ header {
 
 @media screen and (min-width: 768px) {
   .continents {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 0.3rem;
+  }
+
+  .countries {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: 0.3rem;

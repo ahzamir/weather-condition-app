@@ -8,20 +8,24 @@ const Countries = () => {
   const dispatch = useDispatch();
   const { continentName } = useParams();
   useEffect(() => {
-    console.log(continentName);
     dispatch(getCountries(continentName));
   }, []);
   const countries = useSelector((state) => (state.countries));
   return (
-    <div className="countriesPage" data-testid="countriesContent">
-      <div className="homePageCover">
-        <h1>World Weather</h1>
-        <p>Choose the country</p>
+    <div data-testid="countriesContent" className="w-100 pe-3 ps-3 pt-5 pb-5 secondary-bg h-100 main-contents countriesPage">
+      <div>
+        <h2 className="text-white fw-bold fs-5 fs-md-2 text-center">
+          World Weather
+          <br />
+          <span>Choose a country to see the weather</span>
+        </h2>
+        <h3 className="fw-bold fs-5 fs-md-2 text-center color-primary">
+          {continentName}
+          {' '}
+          <span className="text-white">Countries</span>
+        </h3>
       </div>
-      <div className="padding">
-        <h2 className="countriesHeader">Countries</h2>
-      </div>
-      <div className="padding countries">
+      <div className="countries">
         {Object.values(countries).map((country) => (
           <Country
             key={country.cca3}
