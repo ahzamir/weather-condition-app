@@ -36,7 +36,7 @@ const Home = () => {
             id: 5,
         },
         {
-            name: 'Australia',
+            name: 'Oceania',
             image: oceaniaSvg,
             id: 6,
         },
