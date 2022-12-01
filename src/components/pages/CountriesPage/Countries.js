@@ -12,7 +12,7 @@ const Countries = () => {
   }, []);
   const countries = useSelector((state) => (state.countries));
   return (
-    <div data-testid="countriesContent" className="w-100 pe-3 ps-3 pt-5 pb-5 secondary-bg h-100 main-contents countriesPage">
+    <div data-testid="countriesContent" className="pt-5 pb-5 secondary-bg main-contents countriesPage">
       <div>
         <h2 className="text-white fw-bold fs-5 fs-md-2 text-center">
           World Weather
@@ -25,7 +25,7 @@ const Countries = () => {
           <span className="text-white">Countries</span>
         </h3>
       </div>
-      <div className="countries">
+      <div className="countries p-5">
         {Object.values(countries).map((country) => (
           <Country
             key={country.cca3}
