@@ -25,7 +25,7 @@ const Countries = () => {
           <span className="text-white">Countries</span>
         </h3>
       </div>
-      <div className="countries p-5">
+      <div className="countries p-3 p-md-5">
         {Object.values(countries).map((country) => (
           <Country
             key={country.cca3}
