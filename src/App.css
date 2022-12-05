@@ -174,9 +174,14 @@ header {
   transition: filter 0.8s;
 }
 
-.countriesPage,
-.statesPage {
+.countriesPage {
   background: url(aassets/earth.png) no-repeat center center;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.statesPage {
+  background: url(aassets/thunderstorm.jpg) no-repeat center center;
   background-attachment: fixed;
   width: 100%;
 }
