@@ -282,7 +282,8 @@ header {
     column-gap: 0.3rem;
   }
 
-  .countries {
+  .countries,
+  .states {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
   }
