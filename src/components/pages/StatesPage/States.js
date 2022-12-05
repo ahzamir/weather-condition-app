@@ -14,25 +14,25 @@ const States = () => {
   const countryStates = useSelector((state) => (state.countryStates));
   console.log(countryStates);
   return (
-    <div className="statesPage" data-testid="statesContent">
+    <div className="statesPage main-contents" data-testid="statesContent">
       {/* <div className="weatherInfo">
         <WeatherInfo
           name={countryName}
         />
       </div> */}
-      <div className="padding chooseState">
-        <h2>
-          States
+      <div>
+        <h2 className="text-white fw-bold fs-5 fs-md-2 text-center">
+          World Weather
+          <br />
+          <span>Choose a state to see the weather</span>
         </h2>
-        <p>
-          Choose a state:
+        <h3 className="fw-bold fs-5 fs-md-2 text-center color-primary">
+          {countryName}
           {' '}
-          {countryStates.length}
-          {' '}
-          States
-        </p>
+          <span className="text-white">States</span>
+        </h3>
       </div>
-      <div className="states padding">
+      <div className="states p-3 p-md-5">
         {countryStates.map((state) => (
           <State
             name={state.name}

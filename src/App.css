@@ -174,13 +174,15 @@ header {
   transition: filter 0.8s;
 }
 
-.countriesPage {
+.countriesPage,
+.statesPage {
   background: url(aassets/earth.png) no-repeat center center;
   background-attachment: fixed;
   width: 100%;
 }
 
-.countries {
+.countries,
+.states {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 0.5rem;
@@ -188,7 +190,8 @@ header {
   padding: 1rem;
 }
 
-.country {
+.country,
+.state {
   background: rgba(28, 28, 28, 0.457);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -196,19 +199,11 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.state {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: rgb(57, 92, 156) solid 1px;
-  padding: 0.5rem;
-  margin: 0.2rem;
-}
-
 .country:hover,
 .state:hover {
   cursor: pointer;
   background-color: #1d1d1d;
+  border: 2px solid #ec4c8a;
 }
 
 .weatherInfo {
@@ -216,25 +211,6 @@ header {
 }
 
 .chooseState {
-  color: #fff;
-}
-
-.states {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  color: #fff;
-  width: 100%;
-}
-
-.stateName {
-  font-size: 0.8rem;
-}
-
-.stateCode {
-  font-size: 0.5rem;
-}
-
-.stateIcone {
   color: #fff;
 }
 
