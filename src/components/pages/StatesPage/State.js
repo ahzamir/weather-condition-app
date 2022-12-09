@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { CgArrowRightO } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +6,7 @@ const State = ({ name, code }) => {
   return (
     <Link
       to={`/${name}/weather`}
-      className="d-flex align-items-center justify-content-between p-3 state"
+      className="d-flex align-items-center justify-content-between p-3 text-decoration-none state"
     >
       <div>
         <h2 className="fw-bold fs-5 fs-md-2 color-primary">

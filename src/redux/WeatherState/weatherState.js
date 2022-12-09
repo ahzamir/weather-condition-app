@@ -10,13 +10,11 @@ const apiGetWeather = async (name) => {
     },
   });
   const weatherinfo = await response.json();
-  console.log(weatherinfo);
   return weatherinfo;
 };
 
 const getWeather = (name) => async (dispatch) => {
   const weatherinfo = await apiGetWeather(name);
-  console.log(weatherinfo);
   dispatch({
     type: GET_WEATHER,
     payload: weatherinfo,
