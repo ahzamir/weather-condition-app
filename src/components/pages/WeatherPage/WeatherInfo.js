@@ -12,25 +12,26 @@ import partlySunny from '../../../aassets/weather-conditions/partly-sunny.png';
 
 const WeatherInfo = () => {
   const weatherIcon = (weather) => {
-    if (weather === 'Snow') {
+    const weatherCondition = weather?.toLowerCase();
+    if (weatherCondition?.includes('snow', 'sleet')) {
       return snowy;
     }
-    if (weather === 'Clouds') {
+    if (weatherCondition?.includes('cloud', 'overcast', 'fog', 'mist')) {
       return cloudy;
     }
-    if (weather === 'Rain') {
+    if (weatherCondition?.includes('rain')) {
       return rainy;
     }
-    if (weather === 'Clear') {
+    if (weatherCondition?.includes('sun', 'clear', 'sunny', 'fair')) {
       return sunny;
     }
-    if (weather === 'Thunderstorm') {
+    if (weatherCondition?.includes('thunder', 'storm', 'hail')) {
       return thundery;
     }
-    if (weather === 'Drizzle') {
+    if (weatherCondition?.includes('partly', 'drizzle')) {
       return partlySunny;
     }
-    return snowy;
+    return sunny;
   };
   const weaterLocation = useParams().name
   const dispatch = useDispatch();
@@ -39,8 +40,7 @@ const WeatherInfo = () => {
   }, []);
   const weatherInfo = useSelector((state) => (state.stateWeather));
   console.log(weatherInfo);
-  const weather = weatherInfo?.current?.condition?.text;
-  console.log(weather);
+  console.log(weatherInfo?.current?.condition?.text);
   if (!weatherInfo) {
     return <p>loading...</p>;
   }
@@ -50,11 +50,10 @@ const WeatherInfo = () => {
         <h1 className="text-center">
           <IoLocationSharp />
           {' '}
-          {weatherInfo.name}
+          {weatherInfo?.location?.name}
         </h1>
-
         <div className="d-flex justify-content-center">
-          <img src={weatherIcon(weather)} alt="weather" />
+          <img src={weatherIcon(weatherInfo?.current?.condition?.text)} alt="weather" className='weather-icon img-fluid w-25 h-25 mt-5 mb-5' />
         </div>
       </div>
     </div>
