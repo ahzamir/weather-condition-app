@@ -46,17 +46,38 @@ const WeatherInfo = () => {
   }
   return (
     <div className="pt-5 mt-5">
-      <div>
-        <h1 className="text-center">
-          <IoLocationSharp />
-          {' '}
-          {weatherInfo?.location?.name}
-        </h1>
-        <div className="d-flex justify-content-center">
+      <div className='text-white'>
+        <div className="d-flex flex-column align-items-center text-white">
           <img src={weatherIcon(weatherInfo?.current?.condition?.text)} alt="weather" className='weather-icon img-fluid w-25 h-25 mt-5 mb-5' />
+          <h2>{weatherInfo?.current?.temp_c}</h2>
+          <h2>{weatherInfo?.current?.condition?.text}</h2>
+        </div>
+        <div className="d-flex flex-column align-items-center">
+          <h2>Cloudliness: {weatherInfo?.current?.cloud}</h2>
+          <h2>Max Temp: {weatherInfo?.forecast?.forecastday[0].day.maxtemp_c}</h2>
+          <h2>Min Temp: {weatherInfo?.forecast?.forecastday[0].day.mintemp_c}</h2>
+          <h2>Sunrise: {weatherInfo?.forecast?.forecastday[0].astro.sunrise}</h2>
+          <h2>Sunset: {weatherInfo?.forecast?.forecastday[0].astro.sunset}</h2>
+        </div>
+        <div>
+          <h2 className="text-center">
+            <IoLocationSharp />
+            {' '}
+            {weatherInfo?.location?.name}
+          </h2>
+          <p>
+            Latitude:
+            {' '}
+            {weatherInfo?.location?.lat}
+          </p>
+          <p>
+            Longitude:
+            {' '}
+            {weatherInfo?.location?.lon}
+          </p>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
