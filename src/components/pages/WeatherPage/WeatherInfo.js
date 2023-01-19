@@ -76,6 +76,50 @@ const WeatherInfo = () => {
             {weatherInfo?.location?.lon}
           </p>
         </div>
+        <div>
+          <h2>
+            {weatherInfo?.location?.localtime.split(' ')[1]}
+          </h2>
+          <p>
+            {weatherInfo?.location?.localtime.split(' ')[0]}
+          </p>
+          <div>
+            <h2>
+              Wind:
+              {' '}
+              {weatherInfo?.current?.wind_kph}
+              {' '}
+              kph
+            </h2>
+            <h2>
+              Humidity:
+              {' '}
+              {weatherInfo?.current?.humidity}
+              {' '}
+              %
+            </h2>
+            <h2>
+              Pressure:
+              {' '}
+              {weatherInfo?.current?.pressure_mb}
+              {' '}
+              mb
+            </h2>
+            <h2>
+              UV:
+              {' '}
+              {weatherInfo?.current?.uv}
+            </h2>
+          </div>
+        </div>
+        <div>
+          <h2>
+            {weatherInfo?.forecast?.forecastday[0].day.condition?.text}
+          </h2>
+          <p>
+            {weatherInfo?.forecast?.forecastday[0].date}
+          </p>
+        </div>
       </div>
     </div >
   );
