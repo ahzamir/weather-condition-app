@@ -12,7 +12,6 @@ const States = () => {
     dispatch(getCountriesStates(countryName));
   }, []);
   const countryStates = useSelector((state) => (state.countryStates));
-  console.log(countryStates);
   return (
     <div className="statesPage main-contents" data-testid="statesContent">
       {/* <div className="weatherInfo">
