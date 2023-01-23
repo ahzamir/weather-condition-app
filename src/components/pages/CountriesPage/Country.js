@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Country = ({
-  name, cca3, flag, population, capital, region,
+  name, cca3, flag, population, capital,
 }) => (
   <div className="d-flex flex-column align-items-center justify-content-center text-center p-3 country">
     <Link
