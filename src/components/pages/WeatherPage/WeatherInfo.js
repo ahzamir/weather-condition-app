@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { IoLocationSharp } from 'react-icons/io5';
-import { getWeather } from '../../../redux/WeatherState/weatherState';
 import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
+import Carousel from 'react-multi-carousel';
+import { getWeather } from '../../../redux/WeatherState/weatherState';
 import snowy from '../../../aassets/weather-conditions/snowy.png';
 import cloudy from '../../../aassets/weather-conditions/cloudy.png';
 import rainy from '../../../aassets/weather-conditions/rainy.png';
@@ -11,10 +12,9 @@ import sunny from '../../../aassets/weather-conditions/sunny.png';
 import thundery from '../../../aassets/weather-conditions/thundery.png';
 import partlySunny from '../../../aassets/weather-conditions/partly-sunny.png';
 import 'react-multi-carousel/lib/styles.css';
-import Carousel from 'react-multi-carousel';
 
 const WeatherInfo = () => {
-  const weaterLocation = useParams().name
+  const weaterLocation = useParams().name;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getWeather(weaterLocation));
@@ -123,18 +123,33 @@ const WeatherInfo = () => {
   } if (weatherInfo.length > 0) {
     return (
       <div className="pt-5 mt-5">
-        <div className='text-white'>
+        <div className="text-white">
           <div className="d-flex flex-column align-items-center text-white">
-            <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className='weather-icon img-fluid w-25 h-25 mt-5 mb-5' />
+            <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
             <h2>{weatherInfo.current.temp_c}</h2>
             <h2>{weatherInfo.current.condition.text}</h2>
           </div>
           <div className="d-flex flex-column align-items-center">
-            <h2>Cloudliness: {weatherInfo.current.cloud}</h2>
-            <h2>Max Temp: {weatherInfo.forecast.forecastday[0].day.maxtemp_c}</h2>
-            <h2>Min Temp: {weatherInfo.forecast.forecastday[0].day.mintemp_c}</h2>
-            <h2>Sunrise: {weatherInfo.forecast.forecastday[0].astro.sunrise}</h2>
-            <h2>Sunset: {weatherInfo.forecast.forecastday[0].astro.sunset}</h2>
+            <h2>
+              Cloudliness:
+              {weatherInfo.current.cloud}
+            </h2>
+            <h2>
+              Max Temp:
+              {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
+            </h2>
+            <h2>
+              Min Temp:
+              {weatherInfo.forecast.forecastday[0].day.mintemp_c}
+            </h2>
+            <h2>
+              Sunrise:
+              {weatherInfo.forecast.forecastday[0].astro.sunrise}
+            </h2>
+            <h2>
+              Sunset:
+              {weatherInfo.forecast.forecastday[0].astro.sunset}
+            </h2>
           </div>
           <div>
             <h2 className="text-center">
@@ -212,12 +227,24 @@ const WeatherInfo = () => {
               customLeftArrow={<CustomLeftArrow onClick={() => { }} />}
               removeArrowOnDeviceType={['tablet', 'mobile']}
             >
+              <h1>
+                Ahmad
+              </h1>
+              <h1>
+                Mahmood
+              </h1>
+              <h1>
+                Ahmad
+              </h1>
+              <h1>
+                Mahmood
+              </h1>
             </Carousel>
           </div>
-        </div >
-      </div >
+        </div>
+      </div>
     );
-  };
+  }
 };
 
 export default WeatherInfo;
