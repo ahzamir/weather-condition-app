@@ -280,6 +280,25 @@ header {
   color: #56cce4 !important;
 }
 
+#loadingSspinner {
+  color: #ec4c8a;
+}
+
+.weather-page {
+  width: 100%;
+  height: 100vh;
+  padding: 7rem;
+}
+
+.background-dark {
+  background: rgba( 119, 159, 202, 0.1 );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.119);
+  backdrop-filter: blur( 3px );
+  -webkit-backdrop-filter: blur( 3px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
 @media screen and (min-width: 768px) {
   .continents {
     display: grid;

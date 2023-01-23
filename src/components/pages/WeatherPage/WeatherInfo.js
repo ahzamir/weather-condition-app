@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { IoLocationSharp } from 'react-icons/io5';
-// import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
+import homePageCover from '../../../aassets/images/weather-world.svg';
 import Carousel from 'react-multi-carousel';
 import { getWeather } from '../../../redux/WeatherState/weatherState';
 import snowy from '../../../aassets/weather-conditions/snowy.png';
@@ -63,46 +63,19 @@ const WeatherInfo = () => {
   };
   if (weatherInfo.length === 0) {
     return (
-      <div className="d-flex justify-content-center align-items-center h-100 mt-5 pt-5 mt-md-0 pt-md-0">
-        <div className="spinner-border text-success" role="status">
+      <div className="pt-5 mt-5 d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <div className="spinner-border text-danger" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
   }
   return (
-    <div className="pt-5 mt-5">
-      <div className="text-white">
-        <div className="d-flex flex-column align-items-center text-white">
-          <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
-          <h2>{weatherInfo.current.temp_c}</h2>
-          <h2>{weatherInfo.current.condition.text}</h2>
-        </div>
+    <div className="pt-5 mt-5 weather-page">
+      <div className="rounded-3 text-white p-5 d-flex justify-content-between align-items-center background-dark">
         <div className="d-flex flex-column align-items-center">
-          <h2>
-            Cloudliness:
-            {weatherInfo.current.cloud}
-          </h2>
-          <h2>
-            Max Temp:
-            {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
-          </h2>
-          <h2>
-            Min Temp:
-            {weatherInfo.forecast.forecastday[0].day.mintemp_c}
-          </h2>
-          <h2>
-            Sunrise:
-            {weatherInfo.forecast.forecastday[0].astro.sunrise}
-          </h2>
-          <h2>
-            Sunset:
-            {weatherInfo.forecast.forecastday[0].astro.sunset}
-          </h2>
-        </div>
-        <div>
           <h2 className="text-center">
-            <IoLocationSharp />
+            <IoLocationSharp className='color-primary' />
             {' '}
             {weatherInfo.location.name}
           </h2>
@@ -117,98 +90,128 @@ const WeatherInfo = () => {
             {weatherInfo.location.lon}
           </p>
         </div>
+        <div className="d-flex flex-column align-items-center">
+          <img src={homePageCover} alt="world-map" className="img-fluid w-75 h-75" />
+        </div>
+      </div>
+      <div className="text-white">
+        <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
+        <h2>{weatherInfo.current.temp_c}</h2>
+        <h2>{weatherInfo.current.condition.text}</h2>
+      </div>
+      <div className="d-flex flex-column align-items-center">
+        <h2>
+          Cloudliness:
+          {weatherInfo.current.cloud}
+        </h2>
+        <h2>
+          Max Temp:
+          {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
+        </h2>
+        <h2>
+          Min Temp:
+          {weatherInfo.forecast.forecastday[0].day.mintemp_c}
+        </h2>
+        <h2>
+          Sunrise:
+          {weatherInfo.forecast.forecastday[0].astro.sunrise}
+        </h2>
+        <h2>
+          Sunset:
+          {weatherInfo.forecast.forecastday[0].astro.sunset}
+        </h2>
+      </div>
+      <div>
+        <h2>
+          {weatherInfo.location.localtime.split(' ')[1]}
+        </h2>
+        <p>
+          {weatherInfo.location.localtime.split(' ')[0]}
+        </p>
         <div>
           <h2>
-            {weatherInfo.location.localtime.split(' ')[1]}
+            Wind:
+            {' '}
+            {weatherInfo.current.wind_kph}
+            {' '}
+            kph
           </h2>
-          <p>
-            {weatherInfo.location.localtime.split(' ')[0]}
-          </p>
-          <div>
-            <h2>
-              Wind:
-              {' '}
-              {weatherInfo.current.wind_kph}
-              {' '}
-              kph
-            </h2>
-            <h2>
-              Humidity:
-              {' '}
-              {weatherInfo.current.humidity}
-              {' '}
-              %
-            </h2>
-            <h2>
-              Pressure:
-              {' '}
-              {weatherInfo.current.pressure_mb}
-              {' '}
-              mb
-            </h2>
-            <h2>
-              UV:
-              {' '}
-              {weatherInfo.current.uv}
-            </h2>
-          </div>
-        </div>
-        {/* create a select input so users can select the day they want to see the weather for */}
-        <div className="d-flex flex-column align-items-center">
-          <h2 className="text-center">Select a day to see the weather for</h2>
-          <select
-            className="form-select w-50"
-            aria-label="Default select example"
-            onChange={(e) => {
-              setDay(e.target.value);
-            }}
-          >
-            <option value="0">Today</option>
-            <option value="1">Tomorrow</option>
-            <option value="2">Day after tomorrow</option>
-          </select>
-        </div>
-        <div id="rooms-container" className="w-100">
-          {/* show the date of the day selected */}
-          <h2 className="text-center">
-            {weatherInfo.forecast.forecastday[day].date}
+          <h2>
+            Humidity:
+            {' '}
+            {weatherInfo.current.humidity}
+            {' '}
+            %
           </h2>
-          <Carousel
-            responsive={responsive}
-            infinite
-            autoPlay
-            autoPlaySpeed={3000}
-            keyBoardControl
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container ms-2 me-2 pt-2 pb-2"
-            deviceType={responsive.deviceType}
-            partialVisible
-            swipeable
-            showDots
-            itemClass="carousel-item-padding-40-px ps-md-4 pe-md-2 rounded-5 room-card"
-            slidesToSlide={1}
-            arrows
-            removeArrowOnDeviceType={['tablet', 'mobile']}
-          >
-            {weatherInfo.forecast.forecastday[day].hour.map((hour) => (
-              <div className="d-flex flex-column align-items-center" key={hour.time}>
-                <h2>
-                  {hour.time.split(' ')[1]}
-                </h2>
-                <img src={weatherIcon(hour.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
-                <h2>
-                  {hour.temp_c}
-                  {' '}
-                  °C
-                </h2>
-                <h2>
-                  {hour.condition.text}
-                </h2>
-              </div>
-            ))}
-          </Carousel>
+          <h2>
+            Pressure:
+            {' '}
+            {weatherInfo.current.pressure_mb}
+            {' '}
+            mb
+          </h2>
+          <h2>
+            UV:
+            {' '}
+            {weatherInfo.current.uv}
+          </h2>
         </div>
+      </div>
+      {/* create a select input so users can select the day they want to see the weather for */}
+      <div className="d-flex flex-column align-items-center">
+        <h2 className="text-center">Select a day to see the weather for</h2>
+        <select
+          className="form-select w-50"
+          aria-label="Default select example"
+          onChange={(e) => {
+            setDay(e.target.value);
+          }}
+        >
+          <option value="0">Today</option>
+          <option value="1">Tomorrow</option>
+          <option value="2">Day after tomorrow</option>
+        </select>
+      </div>
+      <div id="rooms-container" className="w-100">
+        {/* show the date of the day selected */}
+        <h2 className="text-center">
+          {weatherInfo.forecast.forecastday[day].date}
+        </h2>
+        <Carousel
+          responsive={responsive}
+          infinite
+          autoPlay
+          autoPlaySpeed={3000}
+          keyBoardControl
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container ms-2 me-2 pt-2 pb-2"
+          deviceType={responsive.deviceType}
+          partialVisible
+          swipeable
+          showDots
+          itemClass="carousel-item-padding-40-px ps-md-4 pe-md-2 rounded-5 room-card"
+          slidesToSlide={1}
+          arrows
+          removeArrowOnDeviceType={['tablet', 'mobile']}
+        >
+          {weatherInfo.forecast.forecastday[day].hour.map((hour) => (
+            <div className="d-flex flex-column align-items-center" key={hour.time}>
+              <h2>
+                {hour.time.split(' ')[1]}
+              </h2>
+              <img src={weatherIcon(hour.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
+              <h2>
+                {hour.temp_c}
+                {' '}
+                °C
+              </h2>
+              <h2>
+                {hour.condition.text}
+              </h2>
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
   );
