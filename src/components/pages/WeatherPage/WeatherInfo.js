@@ -192,7 +192,7 @@ const WeatherInfo = () => {
             removeArrowOnDeviceType={['tablet', 'mobile']}
           >
             {weatherInfo.forecast.forecastday[day].hour.map((hour) => (
-              <div className="d-flex flex-column align-items-center">
+              <div className="d-flex flex-column align-items-center" key={hour.time}>
                 <h2>
                   {hour.time.split(' ')[1]}
                 </h2>
