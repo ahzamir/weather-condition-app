@@ -1,6 +1,6 @@
 const key = 'b134e251af58430f964152538220407';
 const GET_WEATHER = 'my-app/states/GET_WEATHER';
-const initialState = {};
+const initialState = [];
 
 const apiGetWeather = async (name) => {
   const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${name}&days=3&aqi=yes`, {
