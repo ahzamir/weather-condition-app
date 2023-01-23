@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { IoLocationSharp } from 'react-icons/io5';
@@ -14,6 +14,7 @@ import partlySunny from '../../../aassets/weather-conditions/partly-sunny.png';
 import 'react-multi-carousel/lib/styles.css';
 
 const WeatherInfo = () => {
+  const [day, setDay] = useState(0);
   const weatherInfo = useSelector((state) => (state.stateWeather));
   const responsive = {
     superLargeDesktop: {
@@ -205,7 +206,26 @@ const WeatherInfo = () => {
               </h2>
             </div>
           </div>
+          {/* create a select input so users can select the day they want to see the weather for */}
+          <div className="d-flex flex-column align-items-center">
+            <h2 className="text-center">Select a day to see the weather for</h2>
+            <select
+              className="form-select w-50"
+              aria-label="Default select example"
+              onChange={(e) => {
+                setDay(e.target.value);
+              }}
+            >
+              <option value="0">Today</option>
+              <option value="1">Tomorrow</option>
+              <option value="2">Day after tomorrow</option>
+            </select>
+          </div>
           <div id="rooms-container" className="w-100">
+            {/* show the date of the day selected */}
+            <h2 className="text-center">
+              {weatherInfo.forecast.forecastday[day].date}
+            </h2>
             <Carousel
               responsive={responsive}
               infinite
@@ -224,13 +244,20 @@ const WeatherInfo = () => {
               arrows
               removeArrowOnDeviceType={['tablet', 'mobile']}
             >
-              {weatherInfo.forecast.forecastday.map((day) => (
+              {weatherInfo.forecast.forecastday[day].hour.map((hour) => (
                 <div className="d-flex flex-column align-items-center">
-                  <h2>{day.date}</h2>
-                  <img src={weatherIcon(day.day.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
-                  <h2>{day.day.maxtemp_c}</h2>
-                  <h2>{day.day.mintemp_c}</h2>
-                  <h2>{day.day.condition.text}</h2>
+                  <h2>
+                    {hour.time.split(' ')[1]}
+                  </h2>
+                  <img src={weatherIcon(hour.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
+                  <h2>
+                    {hour.temp_c}
+                    {' '}
+                    °C
+                  </h2>
+                  <h2>
+                    {hour.condition.text}
+                  </h2>
                 </div>
               ))}
             </Carousel>
