@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { IoLocationSharp } from 'react-icons/io5';
-import homePageCover from '../../../aassets/images/weather-world.svg';
 import Carousel from 'react-multi-carousel';
 import { getWeather } from '../../../redux/WeatherState/weatherState';
 import snowy from '../../../aassets/weather-conditions/snowy.png';
@@ -11,6 +10,15 @@ import rainy from '../../../aassets/weather-conditions/rainy.png';
 import sunny from '../../../aassets/weather-conditions/sunny.png';
 import thundery from '../../../aassets/weather-conditions/thundery.png';
 import partlySunny from '../../../aassets/weather-conditions/partly-sunny.png';
+import sunriseIcon from '../../../aassets/icons/sunrise.png';
+import sunsetIcon from '../../../aassets/icons/sunset.png';
+import humidityIcon from '../../../aassets/icons/humidity.png';
+import windIcon from '../../../aassets/icons/wind.png';
+import lowTemperatueIcon from '../../../aassets/icons/low-temperature.png';
+import highTemperatureIcon from '../../../aassets/icons/high-temperatures.png';
+import pressureIcon from '../../../aassets/icons/atmospheric.png';
+import uvIcon from '../../../aassets/icons/uv.png';
+import cloudIcon from '../../../aassets/icons/clouds-and-sun.png';
 import 'react-multi-carousel/lib/styles.css';
 
 const WeatherInfo = () => {
@@ -74,7 +82,7 @@ const WeatherInfo = () => {
     <div className="d-flex flex-column justify-content-center align-items-center text-white weather-page">
       <div className="rounded-3 d-flex justify-content-between w-100">
         <div className="rounded-3 p-4 d-flex justify-content-between align-items-center background-dark weather-location">
-          <div className="d-flex flex-column align-items-center">
+          <div className="d-flex flex-column">
             <h2 className="text-center fw-bold text-uppercase mb-3 text-shadow fs-3">
               <IoLocationSharp className='color-primary' />
               {' '}
@@ -91,83 +99,95 @@ const WeatherInfo = () => {
               {weatherInfo.location.lon}
             </p>
           </div>
-          <div className="d-flex flex-column align-items-center">
-            <img src={homePageCover} alt="world-map" className="img-fluid w-75 h-75" />
-          </div>
-        </div>
-        <div className="rounded-3 p-4 d-flex flex-column align-items-center background-dark weather-info">
           <div className="d-flex flex-column align-items-center mb-3">
             <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="img-fluid weather-icon mb-3" />
             <h2 className="text-center fw-bold text-shadow fs-3">{weatherInfo.current.temp_c}</h2>
             <h2 className="text-center fw-bold text-shadow fs-5">{weatherInfo.current.condition.text}</h2>
           </div>
-          <div className="d-flex flex-column align-items-center w-100">
-            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
-              <p className="text-center fw-bold text-shadow mb-0">
-                Cloudliness:
-                {weatherInfo.current.cloud}
-              </p>
-            </div>
-            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
-              <p className="text-center fw-bold text-shadow mb-0">
-                Max Temp:
-                {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
-              </p>
-            </div>
-            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
-              <p className="text-center fw-bold text-shadow mb-0">
-                Min Temp:
-                {weatherInfo.forecast.forecastday[0].day.mintemp_c}
-              </p>
-            </div>
-            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
-              <p className="text-center fw-bold text-shadow mb-0">
-                Sunrise:
-                {weatherInfo.forecast.forecastday[0].astro.sunrise}
-              </p>
-            </div>
-            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark border border-1 border-white">
-              <p className="text-center fw-bold text-shadow mb-0">
-                Sunset:
-                {weatherInfo.forecast.forecastday[0].astro.sunset}
-              </p>
-            </div>
+        </div>
+        <div className="d-flex flex-column align-items-center rounded-3 p-4 background-dark weather-info justify-content-evenly">
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+            <p className="text-center fw-bold text-shadow mb-0">
+              Cloudliness:
+              {weatherInfo.current.cloud}
+            </p>
+            <img src={cloudIcon} alt="cloud" className="img-fluid weather-condition-icon" />
+          </div>
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+            <p className="text-center fw-bold text-shadow mb-0">
+              Max Temp:
+              {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
+            </p>
+            <img src={highTemperatureIcon} alt="air-quality" className="img-fluid weather-condition-icon" />
+          </div>
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+            <p className="text-center fw-bold text-shadow mb-0">
+              Min Temp:
+              {weatherInfo.forecast.forecastday[0].day.mintemp_c}
+            </p>
+            <img src={lowTemperatueIcon} alt="low-temprature" className="img-fluid weather-condition-icon" />
+          </div>
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+            <p className="text-center fw-bold text-shadow mb-0">
+              Sunrise:
+              {weatherInfo.forecast.forecastday[0].astro.sunrise}
+            </p>
+            <img src={sunriseIcon} alt="sunrise" className="img-fluid weather-condition-icon" />
+          </div>
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark border border-1 border-white">
+            <p className="text-center fw-bold text-shadow mb-0">
+              Sunset:
+              {weatherInfo.forecast.forecastday[0].astro.sunset}
+            </p>
+            <img src={sunsetIcon} alt="sunset" className="img-fluid weather-condition-icon" />
           </div>
         </div>
         <div className="rounded-3 p-4 d-flex flex-column align-items-center background-dark w-25">
-          <h2>
+          <h2 className="text-center fw-bold text-uppercase mb-2 text-shadow fs-1">
             {weatherInfo.location.localtime.split(' ')[1]}
           </h2>
-          <p>
+          <p className="text-center fw-bold text-uppercase mb-2 text-shadow fs-3">
             {weatherInfo.location.localtime.split(' ')[0]}
           </p>
-          <div>
-            <h2>
-              Wind:
-              {' '}
-              {weatherInfo.current.wind_kph}
-              {' '}
-              kph
-            </h2>
-            <h2>
-              Humidity:
-              {' '}
-              {weatherInfo.current.humidity}
-              {' '}
-              %
-            </h2>
-            <h2>
-              Pressure:
-              {' '}
-              {weatherInfo.current.pressure_mb}
-              {' '}
-              mb
-            </h2>
-            <h2>
-              UV:
-              {' '}
-              {weatherInfo.current.uv}
-            </h2>
+          <div className="row w-100 d-flex justify-content-center">
+            <div className="col-5 d-flex flex-column align-items-center background-dark border border-1 border-white p-1 m-1">
+              <img src={windIcon} alt="wind" className="img-fluid weather-quality-icon mb-1" />
+              <h2 className="text-center fw-bold text-shadow mb-0">
+                Wind<br />
+                {' '}
+                {weatherInfo.current.wind_kph}
+                {' '}
+                kph
+              </h2>
+            </div>
+            <div className="col-5 d-flex flex-column align-items-center background-dark border border-1 border-white p-1 m-1">
+              <img src={humidityIcon} alt="humidity" className="img-fluid weather-quality-icon mb-1" />
+              <h2 className="text-center fw-bold text-shadow mb-0">
+                Humidity<br />
+                {' '}
+                {weatherInfo.current.humidity}
+                {' '}
+                %
+              </h2>
+            </div>
+            <div className="col-5 d-flex flex-column align-items-center background-dark border border-1 border-white p-1 m-1">
+              <img src={pressureIcon} alt="pressure" className="img-fluid weather-quality-icon mb-1" />
+              <h2 className="text-center fw-bold text-shadow mb-0">
+                Pressure<br />
+                {' '}
+                {weatherInfo.current.pressure_mb}
+                {' '}
+                mb
+              </h2>
+            </div>
+            <div className="col-5 d-flex flex-column align-items-center background-dark border border-1 border-white p-1 m-1">
+              <img src={uvIcon} alt="uv" className="img-fluid weather-quality-icon mb-1" />
+              <h2 className="text-center fw-bold text-shadow mb-0">
+                UV<br />
+                {' '}
+                {weatherInfo.current.uv}
+              </h2>
+            </div>
           </div>
         </div>
       </div>

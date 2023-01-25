@@ -298,7 +298,7 @@ header {
 }
 
 .background-dark {
-  background: rgba(119, 159, 202, 0.1);
+  background: rgba(119, 159, 202, 0.159);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.119);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -319,6 +319,16 @@ header {
 .weather-icon {
   width: 150px;
   height: 150px;
+}
+
+.weather-condition-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.weather-quality-icon {
+  width: 50px;
+  height: 50px;
 }
 
 @media screen and (min-width: 768px) {
