@@ -84,7 +84,7 @@ const WeatherInfo = () => {
         <div className="rounded-3 p-4 d-flex justify-content-between align-items-center background-dark weather-location">
           <div className="d-flex flex-column">
             <h2 className="text-center fw-bold text-uppercase mb-3 text-shadow fs-3">
-              <IoLocationSharp className='color-primary' />
+              <IoLocationSharp className="color-primary" />
               {' '}
               {weatherInfo.location.name}
             </h2>
@@ -153,7 +153,8 @@ const WeatherInfo = () => {
             <div className="col-5 d-flex flex-column align-items-center background-dark border border-1 border-white p-1 m-1">
               <img src={windIcon} alt="wind" className="img-fluid weather-quality-icon mb-1" />
               <h2 className="text-center fw-bold text-shadow mb-0">
-                Wind<br />
+                Wind
+                <br />
                 {' '}
                 {weatherInfo.current.wind_kph}
                 {' '}
@@ -163,7 +164,8 @@ const WeatherInfo = () => {
             <div className="col-5 d-flex flex-column align-items-center background-dark border border-1 border-white p-1 m-1">
               <img src={humidityIcon} alt="humidity" className="img-fluid weather-quality-icon mb-1" />
               <h2 className="text-center fw-bold text-shadow mb-0">
-                Humidity<br />
+                Humidity
+                <br />
                 {' '}
                 {weatherInfo.current.humidity}
                 {' '}
@@ -173,7 +175,8 @@ const WeatherInfo = () => {
             <div className="col-5 d-flex flex-column align-items-center background-dark border border-1 border-white p-1 m-1">
               <img src={pressureIcon} alt="pressure" className="img-fluid weather-quality-icon mb-1" />
               <h2 className="text-center fw-bold text-shadow mb-0">
-                Pressure<br />
+                Pressure
+                <br />
                 {' '}
                 {weatherInfo.current.pressure_mb}
                 {' '}
@@ -183,7 +186,8 @@ const WeatherInfo = () => {
             <div className="col-5 d-flex flex-column align-items-center background-dark border border-1 border-white p-1 m-1">
               <img src={uvIcon} alt="uv" className="img-fluid weather-quality-icon mb-1" />
               <h2 className="text-center fw-bold text-shadow mb-0">
-                UV<br />
+                UV
+                <br />
                 {' '}
                 {weatherInfo.current.uv}
               </h2>
