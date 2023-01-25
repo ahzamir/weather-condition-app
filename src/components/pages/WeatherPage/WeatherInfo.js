@@ -71,93 +71,96 @@ const WeatherInfo = () => {
     );
   }
   return (
-    <div className="pt-5 mt-5 weather-page">
-      <div className="rounded-3 text-white p-5 d-flex justify-content-between align-items-center background-dark">
-        <div className="d-flex flex-column align-items-center">
-          <h2 className="text-center">
-            <IoLocationSharp className='color-primary' />
-            {' '}
-            {weatherInfo.location.name}
-          </h2>
-          <p>
-            Latitude:
-            {' '}
-            {weatherInfo.location.lat}
-          </p>
-          <p>
-            Longitude:
-            {' '}
-            {weatherInfo.location.lon}
-          </p>
+    <div className="pt-5 mt-5 d-flex flex-column justify-content-center align-items-center text-white weather-page">
+      <div className="rounded-3 p-5 d-flex justify-content-between w-100">
+        <div className="rounded-3 p-2 d-flex justify-content-between align-items-center background-dark w-25">
+          <div className="d-flex flex-column align-items-center">
+            <h2 className="text-center">
+              <IoLocationSharp className='color-primary' />
+              {' '}
+              {weatherInfo.location.name}
+            </h2>
+            <p>
+              Latitude:
+              {' '}
+              {weatherInfo.location.lat}
+            </p>
+            <p>
+              Longitude:
+              {' '}
+              {weatherInfo.location.lon}
+            </p>
+          </div>
+          <div className="d-flex flex-column align-items-center">
+            <img src={homePageCover} alt="world-map" className="img-fluid w-75 h-75" />
+          </div>
         </div>
-        <div className="d-flex flex-column align-items-center">
-          <img src={homePageCover} alt="world-map" className="img-fluid w-75 h-75" />
+        <div className="rounded-3 p-2 d-flex flex-column align-items-center background-dark">
+          <div className="d-flex flex-column align-items-center">
+            <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="img-fluid weather-icon" />
+            <h2>{weatherInfo.current.temp_c}</h2>
+            <h2>{weatherInfo.current.condition.text}</h2>
+          </div>
+          <div className="d-flex flex-column align-items-center">
+            <h2>
+              Cloudliness:
+              {weatherInfo.current.cloud}
+            </h2>
+            <h2>
+              Max Temp:
+              {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
+            </h2>
+            <h2>
+              Min Temp:
+              {weatherInfo.forecast.forecastday[0].day.mintemp_c}
+            </h2>
+            <h2>
+              Sunrise:
+              {weatherInfo.forecast.forecastday[0].astro.sunrise}
+            </h2>
+            <h2>
+              Sunset:
+              {weatherInfo.forecast.forecastday[0].astro.sunset}
+            </h2>
+          </div>
         </div>
-      </div>
-      <div className="text-white">
-        <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
-        <h2>{weatherInfo.current.temp_c}</h2>
-        <h2>{weatherInfo.current.condition.text}</h2>
-      </div>
-      <div className="d-flex flex-column align-items-center">
-        <h2>
-          Cloudliness:
-          {weatherInfo.current.cloud}
-        </h2>
-        <h2>
-          Max Temp:
-          {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
-        </h2>
-        <h2>
-          Min Temp:
-          {weatherInfo.forecast.forecastday[0].day.mintemp_c}
-        </h2>
-        <h2>
-          Sunrise:
-          {weatherInfo.forecast.forecastday[0].astro.sunrise}
-        </h2>
-        <h2>
-          Sunset:
-          {weatherInfo.forecast.forecastday[0].astro.sunset}
-        </h2>
-      </div>
-      <div>
-        <h2>
-          {weatherInfo.location.localtime.split(' ')[1]}
-        </h2>
-        <p>
-          {weatherInfo.location.localtime.split(' ')[0]}
-        </p>
         <div>
           <h2>
-            Wind:
-            {' '}
-            {weatherInfo.current.wind_kph}
-            {' '}
-            kph
+            {weatherInfo.location.localtime.split(' ')[1]}
           </h2>
-          <h2>
-            Humidity:
-            {' '}
-            {weatherInfo.current.humidity}
-            {' '}
-            %
-          </h2>
-          <h2>
-            Pressure:
-            {' '}
-            {weatherInfo.current.pressure_mb}
-            {' '}
-            mb
-          </h2>
-          <h2>
-            UV:
-            {' '}
-            {weatherInfo.current.uv}
-          </h2>
+          <p>
+            {weatherInfo.location.localtime.split(' ')[0]}
+          </p>
+          <div>
+            <h2>
+              Wind:
+              {' '}
+              {weatherInfo.current.wind_kph}
+              {' '}
+              kph
+            </h2>
+            <h2>
+              Humidity:
+              {' '}
+              {weatherInfo.current.humidity}
+              {' '}
+              %
+            </h2>
+            <h2>
+              Pressure:
+              {' '}
+              {weatherInfo.current.pressure_mb}
+              {' '}
+              mb
+            </h2>
+            <h2>
+              UV:
+              {' '}
+              {weatherInfo.current.uv}
+            </h2>
+          </div>
         </div>
       </div>
-      {/* create a select input so users can select the day they want to see the weather for */}
       <div className="d-flex flex-column align-items-center">
         <h2 className="text-center">Select a day to see the weather for</h2>
         <select

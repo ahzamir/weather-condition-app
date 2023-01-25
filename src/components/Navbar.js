@@ -7,7 +7,7 @@ import { IoChevronBackOutline } from 'react-icons/io5';
 const Navbar = () => (
   <header className="primary-bg w-100">
     <nav>
-      <ul className="d-flex justify-content-between align-items-center w-100 list-style-none p-3">
+      <ul className="d-flex justify-content-between align-items-center w-100 list-style-none p-2">
         <li className="d-flex align-items-center justify-content-between">
           <NavLink exact="true" to="/">
             <IoChevronBackOutline className="text-white fs-5 me-2 fw-bold" />
