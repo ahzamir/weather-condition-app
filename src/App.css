@@ -292,6 +292,11 @@ header {
   background: linear-gradient(0deg, rgba(0,0,0,1) 34%, rgba(236,76,138,1) 100%);
 }
 
+.weather-page h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .background-dark {
   background: rgba(119, 159, 202, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.119);
@@ -301,9 +306,19 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.weather-location {
+  width: 40%;
+  padding: 0.5rem;
+}
+
+.weather-info{
+  width: 30%;
+  padding: 0.5rem;
+}
+
 .weather-icon {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 @media screen and (min-width: 768px) {

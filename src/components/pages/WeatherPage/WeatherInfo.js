@@ -71,11 +71,11 @@ const WeatherInfo = () => {
     );
   }
   return (
-    <div className="pt-5 mt-5 d-flex flex-column justify-content-center align-items-center text-white weather-page">
-      <div className="rounded-3 p-5 d-flex justify-content-between w-100">
-        <div className="rounded-3 p-2 d-flex justify-content-between align-items-center background-dark w-25">
+    <div className="d-flex flex-column justify-content-center align-items-center text-white weather-page">
+      <div className="rounded-3 d-flex justify-content-between w-100">
+        <div className="rounded-3 p-4 d-flex justify-content-between align-items-center background-dark weather-location">
           <div className="d-flex flex-column align-items-center">
-            <h2 className="text-center">
+            <h2 className="text-center fw-bold text-uppercase mb-3 text-shadow fs-3">
               <IoLocationSharp className='color-primary' />
               {' '}
               {weatherInfo.location.name}
@@ -95,36 +95,46 @@ const WeatherInfo = () => {
             <img src={homePageCover} alt="world-map" className="img-fluid w-75 h-75" />
           </div>
         </div>
-        <div className="rounded-3 p-2 d-flex flex-column align-items-center background-dark">
-          <div className="d-flex flex-column align-items-center">
-            <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="img-fluid weather-icon" />
-            <h2>{weatherInfo.current.temp_c}</h2>
-            <h2>{weatherInfo.current.condition.text}</h2>
+        <div className="rounded-3 p-4 d-flex flex-column align-items-center background-dark weather-info">
+          <div className="d-flex flex-column align-items-center mb-3">
+            <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="img-fluid weather-icon mb-3" />
+            <h2 className="text-center fw-bold text-shadow fs-3">{weatherInfo.current.temp_c}</h2>
+            <h2 className="text-center fw-bold text-shadow fs-5">{weatherInfo.current.condition.text}</h2>
           </div>
-          <div className="d-flex flex-column align-items-center">
-            <h2>
-              Cloudliness:
-              {weatherInfo.current.cloud}
-            </h2>
-            <h2>
-              Max Temp:
-              {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
-            </h2>
-            <h2>
-              Min Temp:
-              {weatherInfo.forecast.forecastday[0].day.mintemp_c}
-            </h2>
-            <h2>
-              Sunrise:
-              {weatherInfo.forecast.forecastday[0].astro.sunrise}
-            </h2>
-            <h2>
-              Sunset:
-              {weatherInfo.forecast.forecastday[0].astro.sunset}
-            </h2>
+          <div className="d-flex flex-column align-items-center w-100">
+            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+              <p className="text-center fw-bold text-shadow mb-0">
+                Cloudliness:
+                {weatherInfo.current.cloud}
+              </p>
+            </div>
+            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+              <p className="text-center fw-bold text-shadow mb-0">
+                Max Temp:
+                {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
+              </p>
+            </div>
+            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+              <p className="text-center fw-bold text-shadow mb-0">
+                Min Temp:
+                {weatherInfo.forecast.forecastday[0].day.mintemp_c}
+              </p>
+            </div>
+            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+              <p className="text-center fw-bold text-shadow mb-0">
+                Sunrise:
+                {weatherInfo.forecast.forecastday[0].astro.sunrise}
+              </p>
+            </div>
+            <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark border border-1 border-white">
+              <p className="text-center fw-bold text-shadow mb-0">
+                Sunset:
+                {weatherInfo.forecast.forecastday[0].astro.sunset}
+              </p>
+            </div>
           </div>
         </div>
-        <div>
+        <div className="rounded-3 p-4 d-flex flex-column align-items-center background-dark w-25">
           <h2>
             {weatherInfo.location.localtime.split(' ')[1]}
           </h2>
