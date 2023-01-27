@@ -319,6 +319,10 @@ header {
   height: 75px;
 }
 
+.weather-quality {
+  width: 100%;
+}
+
 .weather-condition-icon {
   width: 30px;
   height: 30px;
@@ -367,5 +371,9 @@ header {
   .weather-icon {
     width: 150px;
     height: 150px;
+  }
+
+  .weather-quality {
+    width: 25%;
   }
 }

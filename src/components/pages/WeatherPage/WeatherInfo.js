@@ -105,7 +105,7 @@ const WeatherInfo = () => {
             <h2 className="text-center fw-bold text-shadow fs-5">{weatherInfo.current.condition.text}</h2>
           </div>
         </div>
-        <div className="d-flex flex-column align-items-center rounded-3 p-2 background-dark weather-info justify-content-evenly">
+        <div className="d-flex flex-column align-items-center rounded-3 p-2 background-dark weather-info justify-content-evenly mb-2 mb-md-0">
           <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-1 border border-1 border-white">
             <p className="text-center fw-bold text-shadow mb-0">
               Cloudliness:
@@ -142,7 +142,7 @@ const WeatherInfo = () => {
             <img src={sunsetIcon} alt="sunset" className="img-fluid weather-condition-icon" />
           </div>
         </div>
-        <div className="rounded-3 p-2 d-flex flex-column align-items-center background-dark w-25">
+        <div className="rounded-3 p-2 d-flex flex-column align-items-center background-dark weather-quality">
           <h2 className="text-center fw-bold text-uppercase mb-2 text-shadow fs-1">
             {weatherInfo.location.localtime.split(' ')[1]}
           </h2>
@@ -195,12 +195,12 @@ const WeatherInfo = () => {
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-between align-items-center w-100 mt-3">
-        <span className="fw-bold text-shadow text-white w-25">
+      <div className="d-flex flex-column justify-content-between align-items-center w-100 mt-3 d-md-flex flex-md-row">
+        <span className="fw-bold text-shadow text-white">
           Select the day you want to see the hourly forecast for:
         </span>
         <select
-          className="form-select w-25 text-center border border-1 border-primary"
+          className="form-select text-center border border-1 border-primary mt-2 mt-md-0 ms-md-3 me-md-3"
           aria-label="Default select example"
           onChange={(e) => {
             setDay(e.target.value);
@@ -210,7 +210,7 @@ const WeatherInfo = () => {
           <option value="1">Tomorrow</option>
           <option value="2">Day after tomorrow</option>
         </select>
-        <h2 className="text-center">
+        <h2 className="text-center mt-2 mt-md-0 text-shadow">
           Selected day:
           {' '}
           {weatherInfo.forecast.forecastday[day].date}
@@ -236,7 +236,7 @@ const WeatherInfo = () => {
           removeArrowOnDeviceType={['tablet', 'mobile']}
         >
           {weatherInfo.forecast.forecastday[day].hour.map((hour) => (
-            <div className="d-flex flex-column align-items-center justify-content-center background-dark border border-1 border-white h-100 pt-3 pb-3"
+            <div className="d-flex flex-column align-items-center justify-content-center background-dark border border-1 border-white h-100 pt-2 pb-2 pt-md-3 pb-md-3"
              key={hour.time}>
               <h2>
                 {hour.time.split(' ')[1]}
