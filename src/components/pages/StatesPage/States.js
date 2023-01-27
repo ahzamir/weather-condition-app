@@ -12,13 +12,17 @@ const States = () => {
     dispatch(getCountriesStates(countryName));
   }, []);
   const countryStates = useSelector((state) => (state.countryStates));
+  if (countryStates.length === 0) {
+    return (
+      <div className="pt-5 mt-5 d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <div className="spinner-border text-danger" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="statesPage main-contents" data-testid="statesContent">
-      {/* <div className="weatherInfo">
-        <WeatherInfo
-          name={countryName}
-        />
-      </div> */}
       <div>
         <h2 className="text-white fw-bold fs-5 fs-md-2 text-center">
           World Weather
