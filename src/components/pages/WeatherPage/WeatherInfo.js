@@ -241,7 +241,7 @@ const WeatherInfo = () => {
               <h2>
                 {hour.time.split(' ')[1]}
               </h2>
-              <img src={weatherIcon(hour.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mb-2" />
+              <img src={weatherIcon(hour.condition.text)} alt="weather" className="hourly-weather-icon img-fluid mb-2" />
               <h2>
                 {hour.temp_c}
                 {' '}
