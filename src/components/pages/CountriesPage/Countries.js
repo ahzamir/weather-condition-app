@@ -11,6 +11,15 @@ const Countries = () => {
     dispatch(getCountries(continentName));
   }, []);
   const countries = useSelector((state) => (state.countries));
+  if (countries.length === 0) {
+    return (
+      <div className="pt-5 mt-5 d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <div className="spinner-border text-danger" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div data-testid="countriesContent" className="pt-5 pb-5 secondary-bg main-contents countriesPage">
       <div>
