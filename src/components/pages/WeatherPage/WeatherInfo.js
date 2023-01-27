@@ -27,19 +27,19 @@ const WeatherInfo = () => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1200 },
-      items: 3,
+      items: 6,
     },
     desktop: {
       breakpoint: { max: 1200, min: 992 },
-      items: 3,
+      items: 6,
     },
     tablet: {
       breakpoint: { max: 992, min: 576 },
-      items: 2,
+      items: 5,
     },
     mobile: {
       breakpoint: { max: 576, min: 0 },
-      items: 1,
+      items: 4,
     },
   };
   const weaterLocation = useParams().name;
@@ -200,7 +200,7 @@ const WeatherInfo = () => {
           Select the day you want to see the hourly forecast for
         </span>
         <select
-          className="form-select w-25 ms-2"
+          className="form-select w-25 text-center border border-1 border-primary"
           aria-label="Default select example"
           onChange={(e) => {
             setDay(e.target.value);
@@ -230,17 +230,18 @@ const WeatherInfo = () => {
           partialVisible
           swipeable
           showDots
-          itemClass="carousel-item-padding-40-px ps-md-4 pe-md-2 rounded-5 room-card"
+          // itemClass="carousel-item-padding-40-px"
           slidesToSlide={1}
           arrows
           removeArrowOnDeviceType={['tablet', 'mobile']}
         >
           {weatherInfo.forecast.forecastday[day].hour.map((hour) => (
-            <div className="d-flex flex-column align-items-center" key={hour.time}>
+            <div className="d-flex flex-column align-items-center justify-content-center background-dark border border-1 border-white m-2"
+             key={hour.time}>
               <h2>
                 {hour.time.split(' ')[1]}
               </h2>
-              <img src={weatherIcon(hour.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mt-5 mb-5" />
+              <img src={weatherIcon(hour.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25" />
               <h2>
                 {hour.temp_c}
                 {' '}
