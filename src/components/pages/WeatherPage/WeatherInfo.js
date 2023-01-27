@@ -27,15 +27,15 @@ const WeatherInfo = () => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1200 },
-      items: 6,
+      items: 7,
     },
     desktop: {
       breakpoint: { max: 1200, min: 992 },
-      items: 6,
+      items: 7,
     },
     tablet: {
       breakpoint: { max: 992, min: 576 },
-      items: 5,
+      items: 6,
     },
     mobile: {
       breakpoint: { max: 576, min: 0 },
@@ -230,18 +230,18 @@ const WeatherInfo = () => {
           partialVisible
           swipeable
           showDots
-          // itemClass="carousel-item-padding-40-px"
+          itemClass="carousel-item-padding-40-px p-2 carousel-items"
           slidesToSlide={1}
           arrows
           removeArrowOnDeviceType={['tablet', 'mobile']}
         >
           {weatherInfo.forecast.forecastday[day].hour.map((hour) => (
-            <div className="d-flex flex-column align-items-center justify-content-center background-dark border border-1 border-white m-2"
+            <div className="d-flex flex-column align-items-center justify-content-center background-dark border border-1 border-white h-100 pt-3 pb-3"
              key={hour.time}>
               <h2>
                 {hour.time.split(' ')[1]}
               </h2>
-              <img src={weatherIcon(hour.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25" />
+              <img src={weatherIcon(hour.condition.text)} alt="weather" className="weather-icon img-fluid w-25 h-25 mb-2" />
               <h2>
                 {hour.temp_c}
                 {' '}
