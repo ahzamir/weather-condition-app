@@ -81,7 +81,7 @@ const WeatherInfo = () => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center text-white weather-page">
       <div className="rounded-3 d-flex justify-content-between w-100">
-        <div className="rounded-3 p-4 d-flex justify-content-between align-items-center background-dark weather-location">
+        <div className="rounded-3 p-2 d-flex justify-content-between align-items-center background-dark weather-location">
           <div className="d-flex flex-column">
             <h2 className="text-center fw-bold text-uppercase mb-3 text-shadow fs-3">
               <IoLocationSharp className="color-primary" />
@@ -105,29 +105,29 @@ const WeatherInfo = () => {
             <h2 className="text-center fw-bold text-shadow fs-5">{weatherInfo.current.condition.text}</h2>
           </div>
         </div>
-        <div className="d-flex flex-column align-items-center rounded-3 p-4 background-dark weather-info justify-content-evenly">
-          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+        <div className="d-flex flex-column align-items-center rounded-3 p-2 background-dark weather-info justify-content-evenly">
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-1 border border-1 border-white">
             <p className="text-center fw-bold text-shadow mb-0">
               Cloudliness:
               {weatherInfo.current.cloud}
             </p>
             <img src={cloudIcon} alt="cloud" className="img-fluid weather-condition-icon" />
           </div>
-          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-1 border border-1 border-white">
             <p className="text-center fw-bold text-shadow mb-0">
               Max Temp:
               {weatherInfo.forecast.forecastday[0].day.maxtemp_c}
             </p>
             <img src={highTemperatureIcon} alt="air-quality" className="img-fluid weather-condition-icon" />
           </div>
-          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-1 border border-1 border-white">
             <p className="text-center fw-bold text-shadow mb-0">
               Min Temp:
               {weatherInfo.forecast.forecastday[0].day.mintemp_c}
             </p>
             <img src={lowTemperatueIcon} alt="low-temprature" className="img-fluid weather-condition-icon" />
           </div>
-          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-2 border border-1 border-white">
+          <div className="p-1 ps-3 pe-3 rounded-5 w-100 d-flex justify-content-between align-items-center background-dark mb-1 border border-1 border-white">
             <p className="text-center fw-bold text-shadow mb-0">
               Sunrise:
               {weatherInfo.forecast.forecastday[0].astro.sunrise}
@@ -142,11 +142,11 @@ const WeatherInfo = () => {
             <img src={sunsetIcon} alt="sunset" className="img-fluid weather-condition-icon" />
           </div>
         </div>
-        <div className="rounded-3 p-4 d-flex flex-column align-items-center background-dark w-25">
+        <div className="rounded-3 p-2 d-flex flex-column align-items-center background-dark w-25">
           <h2 className="text-center fw-bold text-uppercase mb-2 text-shadow fs-1">
             {weatherInfo.location.localtime.split(' ')[1]}
           </h2>
-          <p className="text-center fw-bold text-uppercase mb-2 text-shadow fs-3">
+          <p className="text-center fw-bold text-uppercase mb-1 text-shadow fs-5">
             {weatherInfo.location.localtime.split(' ')[0]}
           </p>
           <div className="row w-100 d-flex justify-content-center">
@@ -195,10 +195,12 @@ const WeatherInfo = () => {
           </div>
         </div>
       </div>
-      <div className="d-flex flex-column align-items-center">
-        <h2 className="text-center">Select a day to see the weather for</h2>
+      <div className="d-flex justify-content-between align-items-center w-100">
+        <span className="fw-bold text-shadow text-white w-25">
+          Select the day you want to see the hourly forecast for
+        </span>
         <select
-          className="form-select w-50"
+          className="form-select w-25 ms-2"
           aria-label="Default select example"
           onChange={(e) => {
             setDay(e.target.value);
@@ -208,12 +210,13 @@ const WeatherInfo = () => {
           <option value="1">Tomorrow</option>
           <option value="2">Day after tomorrow</option>
         </select>
-      </div>
-      <div id="rooms-container" className="w-100">
-        {/* show the date of the day selected */}
         <h2 className="text-center">
+          Selected day:
+          {' '}
           {weatherInfo.forecast.forecastday[day].date}
         </h2>
+      </div>
+      <div id="rooms-container" className="w-100">
         <Carousel
           responsive={responsive}
           infinite
