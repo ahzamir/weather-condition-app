@@ -197,7 +197,7 @@ const WeatherInfo = () => {
       </div>
       <div className="d-flex justify-content-between align-items-center w-100 mt-3">
         <span className="fw-bold text-shadow text-white w-25">
-          Select the day you want to see the hourly forecast for
+          Select the day you want to see the hourly forecast for:
         </span>
         <select
           className="form-select w-25 text-center border border-1 border-primary"
