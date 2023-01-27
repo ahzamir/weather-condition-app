@@ -195,7 +195,7 @@ const WeatherInfo = () => {
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-between align-items-center w-100">
+      <div className="d-flex justify-content-between align-items-center w-100 mt-3">
         <span className="fw-bold text-shadow text-white w-25">
           Select the day you want to see the hourly forecast for
         </span>
@@ -225,7 +225,7 @@ const WeatherInfo = () => {
           keyBoardControl
           customTransition="all .5"
           transitionDuration={500}
-          containerClass="carousel-container ms-2 me-2 pt-2 pb-2"
+          containerClass="carousel-container ms-2 me-2 pt-4 pb-4"
           deviceType={responsive.deviceType}
           partialVisible
           swipeable
