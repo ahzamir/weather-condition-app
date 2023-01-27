@@ -79,11 +79,11 @@ const WeatherInfo = () => {
     );
   }
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center text-white weather-page">
-      <div className="rounded-3 d-flex justify-content-between w-100">
-        <div className="rounded-3 p-2 d-flex justify-content-between align-items-center background-dark weather-location">
+    <div className="d-flex flex-column justify-content-center align-items-center text-white w-100 weather-page">
+      <div className="rounded-3 d-flex flex-column justify-content-between w-100 d-md-flex flex-md-row">
+        <div className="rounded-3 p-2 d-flex justify-content-between align-items-center mb-2 mb-md-0 background-dark weather-location">
           <div className="d-flex flex-column">
-            <h2 className="text-center fw-bold text-uppercase mb-3 text-shadow fs-3">
+            <h2 className="fw-bold text-uppercase mb-3 text-shadow fs-3 fs-md-5">
               <IoLocationSharp className="color-primary" />
               {' '}
               {weatherInfo.location.name}
@@ -101,7 +101,7 @@ const WeatherInfo = () => {
           </div>
           <div className="d-flex flex-column align-items-center mb-3">
             <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="img-fluid weather-icon mb-3" />
-            <h2 className="text-center fw-bold text-shadow fs-3">{weatherInfo.current.temp_c}</h2>
+            <h2 className="text-center fw-bold text-shadow fs-4 fs-md-3">{weatherInfo.current.temp_c}</h2>
             <h2 className="text-center fw-bold text-shadow fs-5">{weatherInfo.current.condition.text}</h2>
           </div>
         </div>
