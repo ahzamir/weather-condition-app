@@ -104,6 +104,13 @@ const WeatherInfo = () => {
     }
     return sunny;
   };
+  if (weatherInfo.error) {
+    return (
+      <div className="pt-5 mt-5 d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <h1 className="text-danger">{weatherInfo.error.message}</h1>
+      </div>
+    );
+  }
   if (weatherInfo.length === 0) {
     return (
       <div className="pt-5 mt-5 d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
