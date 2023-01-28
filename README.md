@@ -22,7 +22,7 @@
 
 - Project Screenshots
 
-<img width="1440" alt="Screenshot 2021-09-01 at 11 48 12" src="project-screenshots.png">
+![weather-app](https://user-images.githubusercontent.com/96838030/215270549-366c8189-e493-4a81-87fc-37c292099857.png)
 
 - [World Weather](https://gregarious-pavlova-aaa751.netlify.app/)
 
