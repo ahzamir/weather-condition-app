@@ -1,9 +1,9 @@
 const GET_COUNTRY = 'my-app/countries/GET_COUNTRY';
 const initialState = {};
 
-const apiGetCountries = async () => {
-  const response = await fetch('https://countriesnow.space/api/v0.1/countries/states', {
-    method: 'Get',
+const apiGetCountries = async (continentName) => {
+  const response = await fetch(`https://restcountries.com/v3.1/region/${continentName}`, {
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -12,11 +12,11 @@ const apiGetCountries = async () => {
   return countries;
 };
 
-const getCountries = () => async (dispatch) => {
-  const countries = await apiGetCountries();
+const getCountries = (continentName) => async (dispatch) => {
+  const countries = await apiGetCountries(continentName);
   const countriesData = {};
-  countries.data.forEach((country) => {
-    countriesData[country.name] = country;
+  countries.forEach((country) => {
+    countriesData[country.name.common] = country;
   });
   dispatch({
     type: GET_COUNTRY,
