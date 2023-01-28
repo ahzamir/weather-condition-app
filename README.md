@@ -2,21 +2,27 @@
 
 # World Weather
 
-> This is a SPA react-app project that is built using two APIs. And users can select and choose countries and states and get their updated weather info. 
-I have built this project using react-redux and JavaScript.
+> This is a SPA project that is built using two APIs. Users can check the continent, country, and city of their choice and get the weather of that city. This project is built using React, Redux, and Webpack.
 
 
 ## Built With 
 
-- HTML5
-- CSS3
-- JavaScript
-- React
-- react-redux
-- Webpack
-- Jest
+- [x] Programming Language: [JavaScript](https://www.javascript.com/)
+- [x] Framework: [React](https://reactjs.org/)
+- [x] Library: [Redux](https://redux.js.org/)
+- [x] Linter: [ESLint](https://eslint.org/)
+- [x] Code Editor: [VS Code](https://code.visualstudio.com/)
+- [x] Testing Framework: [Jest](https://jestjs.io/)
+- [x] API: [Countries and Cities](https://documenter.getpostman.com/view/1134062/T1LJjU52?version=latest#fec5b515-b5e1-41c5-8ab4-2cc49bec7694)
+- [x] API: [Weather](https://openweathermap.org/api)
+- [x] Styling: [Bootstrap](https://getbootstrap.com/)
+- [x] Deployment: [Netlify](https://www.netlify.com/)
 
 ## Live Demo (Netlify) 💻
+
+- Project Screenshots
+
+<img width="1440" alt="Screenshot 2021-09-01 at 11 48 12" src="project-screenshots.png">
 
 - [World Weather](https://gregarious-pavlova-aaa751.netlify.app/)
 
@@ -27,41 +33,74 @@ I have built this project using react-redux and JavaScript.
 
 To get a local copy up and running follow these simple example steps.
 
+1- Clone the repository in your local machine:
+```
+$ git clone git@github.com:ahzamir/weather-condition-app.git
+```
+
+2- Go to the repository folder of weather-condition-app in your command prompt:
+```
+$ cd weather-condition-app
+```
+
+3- You might need to install dependecies with:
+```
+$ yarn install
+```
+OR
+```
+$ npm install
+```
+
+7- Go to command line and run the command below for the live server:
+```
+$ yarn start
+```
+OR
+```
+$ npm start
+```
+
 ### Prerequisites
 
-You must have a browser on your device, visual code, a git version, [node.js](https://nodejs.org/en/) installed in your device and clone the repo from GitHub and follow the steps below.
+- [x] A web browser like [Google Chrome](https://www.google.com/chrome/).
+- [x] A code editor like [Visual Studio Code](https://code.visualstudio.com/).
+- [x] A terminal to run the code.
+- [x] [Npm](https://www.npmjs.com/) installed on your computer.
+- [x] [Yarn](https://yarnpkg.com/) installed on your computer.
+- [x] [Git](https://git-scm.com/) installed on your computer.
 
-### Setup
+You can check if Git is installed by running the following command in the terminal.
+```
+$ git --version
+```
 
-Clone the repository from GitHub, open the project folder, inside the project direcory open the commanline or Terminal and install the dependicies.
+To check if node is installed, kindly run this command in the terminal.
+```
+$ node --version
+```
 
-### Install
-
-inside the project direcory open the commanline or Terminal, run npm install to install all the dependicies.
-
-### Usage
-
-To use this project or app run npm start in the project directory and you will see the live serever open on youe browser.
-
-### Run tests
-
-For running tests inside the project directory run npm test in command line or Terminal.
-
-### Deployment
-
-I have used Netlify for deploying this project.
+To check if yarn is installed, kindly run this command in the terminal.
+```
+$ yarn --version
+```
 
 ## Authors
 
+👤 **Ahmad Zamir Yousufi** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
 - GitHub: [@ahzamir](https://github.com/ahzamir).
-- Twitter: [@YousufiZamir](https://twitter.com/YousufiZamir)
-- LinkedIn: [ahmad-zamir-yousufi](https://www.linkedin.com/in/ahzamir/)
+- LinkedIn: [ahzamir](https://www.linkedin.com/in/ahzamir/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/ahzamir/weather-condition-app/issues).
+
+### Attributions and Credit
+
+Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 
 ## Show your support
 
@@ -69,10 +108,12 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [Original design idea by Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
-- Inspiration
-- etc
+- [Microverse](https://www.microverse.org/)
+- Code Reviewers
+- Coding Partners
 
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
+![](https://img.shields.io/badge/Microverse-blueviolet)
