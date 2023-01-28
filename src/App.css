@@ -19,7 +19,7 @@ body {
 
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px white;
-  background: var(--secondary-color)
+  background: var(--secondary-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -36,7 +36,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(90deg, #1d1d1d 0%, var(--primary-color) 100%);
 }
-
 
 .color-primary {
   color: var(--primary-color);
@@ -57,10 +56,10 @@ body {
 header {
   position: fixed;
   background: rgba( 236, 76, 138, 0.45 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 8.5px );
-  -webkit-backdrop-filter: blur( 8.5px );
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 999;
 }
 
@@ -108,7 +107,7 @@ header {
   width: 60px;
   height: 70px;
   left: 49%;
-  margin-left: 0px;
+  margin-left: 0;
   bottom: 5%;
   z-index: 999;
 }
@@ -122,19 +121,19 @@ header {
 
 @keyframes down {
   0% {
-    opacity: 0
+    opacity: 0;
   }
 
   25% {
-    opacity: 1
+    opacity: 1;
   }
 
   75% {
-    opacity: 0
+    opacity: 0;
   }
 
   100% {
-    opacity: 0
+    opacity: 0;
   }
 }
 
@@ -143,7 +142,7 @@ header {
 }
 
 .arrow path.a2 {
-  animation-delay: -.5s;
+  animation-delay: -0.5s;
 }
 
 .arrow path.a3 {
@@ -223,7 +222,6 @@ header {
 }
 
 .weather-page {
-  background: rgb(0, 0, 0);
   padding: 5rem 2rem;
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 34%, rgba(236, 76, 138, 1) 100%);
 }
@@ -254,7 +252,6 @@ header {
 
 .weather-icon {
   width: 75px;
-  /* height: 75px; */
 }
 
 .weather-quality {
@@ -273,7 +270,6 @@ header {
 
 .hourly-weather-icon {
   width: 50px;
-  /* height: 50px; */
 }
 
 @media screen and (min-width: 768px) {
