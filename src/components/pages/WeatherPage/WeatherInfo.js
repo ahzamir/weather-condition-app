@@ -10,6 +10,13 @@ import rainy from '../../../aassets/weather-conditions/rainy.png';
 import sunny from '../../../aassets/weather-conditions/sunny.png';
 import thundery from '../../../aassets/weather-conditions/thundery.png';
 import partlySunny from '../../../aassets/weather-conditions/partly-sunny.png';
+import mist from '../../../aassets/weather-conditions/mist.png';
+import mistNight from '../../../aassets/weather-conditions/mist-night.png';
+import snowyNight from '../../../aassets/weather-conditions/snowy-night.png';
+import cloudyNight from '../../../aassets/weather-conditions/cloudy-night.png';
+import rainyNight from '../../../aassets/weather-conditions/rainy-night.png';
+import clearNight from '../../../aassets/weather-conditions/clear-night.png';
+import thunderyNight from '../../../aassets/weather-conditions/thundery-night.png';
 import sunriseIcon from '../../../aassets/icons/sunrise.png';
 import sunsetIcon from '../../../aassets/icons/sunset.png';
 import humidityIcon from '../../../aassets/icons/humidity.png';
@@ -47,25 +54,53 @@ const WeatherInfo = () => {
   useEffect(() => {
     dispatch(getWeather(weaterLocation));
   }, []);
-  const weatherIcon = (weather) => {
+  const weatherIcon = (weather, time) => {
     const weatherCondition = weather.toLowerCase();
+    const hour = time.split(':')[0];
     if (weatherCondition.includes('snow', 'sleet')) {
+      if (hour > 17 || hour <= 6) {
+        return snowyNight;
+      }
       return snowy;
     }
-    if (weatherCondition.includes('cloud', 'overcast', 'fog', 'mist')) {
+    if (weatherCondition.includes('cloud', 'overcast')) {
+      if (hour > 17 || hour <= 6) {
+        return cloudyNight;
+      }
       return cloudy;
     }
+    if (weatherCondition.includes('mist', 'fog', 'haze')) {
+      if (hour > 17 || hour <= 6) {
+        return mistNight;
+      }
+      return mist;
+    }
     if (weatherCondition.includes('rain')) {
+      if (hour > 17 || hour <= 6) {
+        return rainyNight;
+      }
       return rainy;
     }
     if (weatherCondition.includes('sun', 'clear', 'sunny', 'fair')) {
+      if (hour > 17 || hour <= 6) {
+        return clearNight;
+      }
       return sunny;
     }
     if (weatherCondition.includes('thunder', 'storm', 'hail')) {
+      if (hour > 17 || hour <= 6) {
+        return thunderyNight;
+      }
       return thundery;
     }
     if (weatherCondition.includes('partly', 'drizzle')) {
+      if (hour > 17 || hour <= 6) {
+        return cloudyNight;
+      }
       return partlySunny;
+    }
+    if (hour > 17 || hour <= 6) {
+      return clearNight;
     }
     return sunny;
   };
@@ -100,7 +135,7 @@ const WeatherInfo = () => {
             </p>
           </div>
           <div className="d-flex flex-column align-items-center mb-3">
-            <img src={weatherIcon(weatherInfo.current.condition.text)} alt="weather" className="img-fluid weather-icon mb-3" />
+            <img src={weatherIcon(weatherInfo.current.condition.text, weatherInfo.location.localtime.split(' ')[1])} alt="weather" className="img-fluid weather-icon mb-3" />
             <h2 className="text-center fw-bold text-shadow fs-4 fs-md-3">{weatherInfo.current.temp_c}</h2>
             <h2 className="text-center fw-bold text-shadow fs-5">{weatherInfo.current.condition.text}</h2>
           </div>
@@ -237,11 +272,11 @@ const WeatherInfo = () => {
         >
           {weatherInfo.forecast.forecastday[day].hour.map((hour) => (
             <div className="d-flex flex-column align-items-center justify-content-center background-dark border border-1 border-white h-100 pt-2 pb-2 pt-md-3 pb-md-3"
-             key={hour.time}>
+              key={hour.time}>
               <h2>
                 {hour.time.split(' ')[1]}
               </h2>
-              <img src={weatherIcon(hour.condition.text)} alt="weather" className="hourly-weather-icon img-fluid mb-2" />
+              <img src={weatherIcon(hour.condition.text, hour.time.split(' ')[1])} alt="weather" className="hourly-weather-icon img-fluid mb-2" />
               <h2>
                 {hour.temp_c}
                 {' '}
