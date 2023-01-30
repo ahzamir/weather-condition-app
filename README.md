@@ -49,7 +49,7 @@ OR
 $ npm install
 ```
 
-7- Go to command line and run the command below for the live server:
+4- Go to command line and run the command below for the live server:
 ```
 $ yarn start
 ```
