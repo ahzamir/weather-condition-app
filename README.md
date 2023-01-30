@@ -24,10 +24,7 @@
 
 ![weather-app](https://user-images.githubusercontent.com/96838030/215270549-366c8189-e493-4a81-87fc-37c292099857.png)
 
-- [World Weather](https://gregarious-pavlova-aaa751.netlify.app/)
-
-- [Live Demo](https://www.loom.com/share/df6ca86a26f7404fad7da7713d312ffb)
-
+- [World Weather Condition](https://gregarious-pavlova-aaa751.netlify.app/)
 
 ## Getting Started
 
